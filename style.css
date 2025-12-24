@@ -27,9 +27,9 @@ body {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #ddd;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  flex-shrink: 0;
 }
 
 .avatar {
