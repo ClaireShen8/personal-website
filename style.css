@@ -27,8 +27,8 @@ body {
   width: 160px;
   height: 160px;
   object-fit: cover;
-  border-radius: 10px; /* still square-ish; remove if you want sharp corners */
-  border: 1px solid #e5e5e5;
+  border-radius: 50%; /* still square-ish; remove if you want sharp corners */
+  border: 2px solid #ddd;
 }
 
 .top-right {
