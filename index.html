@@ -1,11 +1,92 @@
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 style="text-align: center;">Claire Shen!</h1>
-    <p>Welcome to my personal website :D</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claire Shen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- Top header section -->
+      <header class="top">
+        <!-- Square photo (you will replace assets/profile.jpg) -->
+        <img
+          class="avatar"
+          src="assets/profile.jpg"
+          alt="Photo of Claire Shen"
+        />
+
+        <div class="top-right">
+          <h1 class="name">Claire Shen</h1>
+          <p class="subtitle">AI Major at UC San Diego</p>
+
+          <nav class="button-row" aria-label="Profile links">
+            <a class="btn" href="https://www.linkedin.com/in/claire-l-shen/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noreferrer">
+              Resume
+            </a>
+
+            <a class="btn" href="https://github.com/ClaireShen8" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+
+            <a class="btn" href="mailto:clshen@ucsd.edu">
+              Email
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <hr class="divider" />
+
+      <!-- Content sections -->
+      <section>
+        <h2>About Me</h2>
+        <p>
+          <!-- Replace with your text -->
+          I’m Claire, an AI major at UC San Diego. I’m interested in building practical
+          machine learning systems, especially projects that connect technical work with real people.
+        </p>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+
+        <h3>SEAP Intern</h3>
+        <p>
+          <!-- Replace with your text -->
+          Describe what you did, what you built, and what impact it had. Include tools/skills
+          (e.g., CAD, Python, rapid prototyping, collaboration).
+        </p>
+
+        <h3>DermLens</h3>
+        <p>
+          <!-- Replace with your text -->
+          Summarize DermLens, your role, what problem it solves, and the approach/stack.
+          You can mention dataset scale, experimentation, and your goals for validation/deployment.
+        </p>
+      </section>
+
+      <section>
+        <h2>Miscellaneous</h2>
+        <p>
+          <!-- Replace with your text -->
+          Add anything you want here: clubs, interests, projects-in-progress, or fun facts.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Claire Shen</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
