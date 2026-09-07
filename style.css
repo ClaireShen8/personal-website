@@ -19,7 +19,8 @@
   --ink-soft:   rgba(34, 36, 4, 0.68);
   --ink-faint:  rgba(34, 36, 4, 0.42);
   --ink-line:   rgba(34, 36, 4, 0.16);
-  --cream-soft: rgba(229, 230, 215, 0.72);
+  --cream-soft:  rgba(229, 230, 215, 0.72);
+  --cream-faint: rgba(229, 230, 215, 0.52);
   --cream-line: rgba(229, 230, 215, 0.16);
 
   --sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -287,7 +288,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   font-family: var(--mono);
   font-size: 12px;
   font-weight: 700;
-  color: var(--bronze);
+  color: var(--cream-faint);
 }
 
 .tile:hover,
@@ -317,7 +318,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   border-radius: 999px;
 }
 
-.tile-tag { color: var(--gold); border: 1px solid var(--bronze); }
+.tile-tag { color: var(--cream); border: 1px solid var(--bronze); }
 .tile-state { color: var(--ink); background: var(--gold); }
 
 .tile-title {
@@ -328,7 +329,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .tile-org {
   font-size: 13.5px;
-  color: var(--bronze);
+  color: var(--cream-faint);
   margin: 7px 0 0;
   font-weight: 500;
 }
@@ -347,7 +348,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--gold);
+  color: var(--cream);
 }
 .tile:hover .tile-more span { padding-left: 4px; }
 .tile-more span { transition: padding-left .16s ease; }
@@ -358,10 +359,10 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 /* ── Placeholder copy still to be written ─────────────────── */
 
 .todo {
-  color: var(--bronze);
+  color: var(--cream-faint);
   font-style: italic;
 }
-.modal .todo { color: var(--bronze); }
+.modal .todo { color: var(--cream-faint); }
 
 /* ── Focus ───────────────────────────────────────────────── */
 
@@ -373,19 +374,24 @@ button:focus-visible,
 }
 .tile:focus-visible { outline-offset: 4px; }
 
+.modal a:focus-visible,
+.modal button:focus-visible { outline-color: var(--cream); }
+.modal-in:focus,
+.modal-in:focus-visible { outline: none; }
+
 /* ── Modal ────────────────────────────────────────────────── */
 
 .modal {
   width: min(720px, calc(100vw - 32px));
   max-height: min(86vh, 900px);
   padding: 0;
-  border: 1.5px solid var(--gold);
+  border: 1.5px solid var(--bronze);
   border-radius: var(--r);
   background: var(--ink);
   color: var(--cream);
   overflow: hidden;
 }
-.modal::backdrop { background: rgba(34, 36, 4, 0.62); backdrop-filter: blur(3px); }
+.modal::backdrop { background: rgba(12, 16, 12, 0.72); backdrop-filter: blur(3px); }
 
 .modal-in {
   padding: 38px clamp(24px, 4vw, 44px) 44px;
@@ -410,7 +416,7 @@ button:focus-visible,
   cursor: pointer;
   transition: background .18s ease, color .18s ease;
 }
-.modal-x:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.modal-x:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 
 .modal-tag {
   font-family: var(--mono);
@@ -418,7 +424,7 @@ button:focus-visible,
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--cream-soft);
   margin: 0 0 12px;
 }
 
@@ -431,7 +437,7 @@ button:focus-visible,
 .modal-org {
   margin: 8px 0 0;
   font-size: 15px;
-  color: var(--bronze);
+  color: var(--cream-faint);
   font-weight: 500;
 }
 
@@ -439,7 +445,7 @@ button:focus-visible,
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: var(--bronze);
+  color: var(--cream-faint);
   margin: 22px 0 0;
   padding-bottom: 22px;
   border-bottom: 1px solid var(--cream-line);
@@ -453,7 +459,7 @@ button:focus-visible,
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--cream);
   margin: 0 0 10px;
 }
 
@@ -463,13 +469,13 @@ button:focus-visible,
   line-height: 1.72;
   color: var(--cream-soft);
 }
-.modal-body p.todo { color: var(--bronze); }
+.modal-body p.todo { color: var(--cream-faint); }
 
 /* Same heading treatment for the no-JS inline fallback */
 .detail .detail-meta {
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--bronze);
+  color: var(--cream-faint);
   margin: 18px 0 0;
 }
 .detail .block { margin-top: 20px; }
@@ -479,7 +485,7 @@ button:focus-visible,
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--cream);
   margin: 0 0 8px;
 }
 .detail p { margin: 0; font-size: 15px; color: var(--cream-soft); }
@@ -493,7 +499,7 @@ button:focus-visible,
   margin-top: clamp(24px, 4vw, 48px);
 }
 
-.end .kick { color: var(--gold); }
+.end .kick { color: var(--cream-soft); }
 .end h2 { color: var(--cream); font-size: clamp(30px, 4.6vw, 46px); font-weight: 700; }
 .end .lede { color: var(--cream-soft); }
 
@@ -508,7 +514,7 @@ button:focus-visible,
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: 0.08em;
-  color: var(--bronze);
+  color: var(--cream-faint);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

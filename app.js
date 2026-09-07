@@ -41,7 +41,9 @@
     bodyEl.replaceChildren(clone);
 
     modal.showModal();
-    modal.querySelector(".modal-in").scrollTop = 0;
+    var panel = modal.querySelector(".modal-in");
+    panel.scrollTop = 0;
+    panel.focus();
   }
 
   document.querySelectorAll(".tile").forEach(function (tile) {
