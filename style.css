@@ -17,7 +17,6 @@
 
   /* derived */
   --ink-soft:   rgba(34, 36, 4, 0.68);
-  --ink-faint:  rgba(34, 36, 4, 0.42);
   --ink-line:   rgba(34, 36, 4, 0.16);
   --cream-soft:  rgba(229, 230, 215, 0.72);
   --cream-faint: rgba(229, 230, 215, 0.52);
@@ -188,18 +187,47 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   box-shadow: 10px 10px 0 var(--bronze);
 }
 
-.portrait figcaption {
+/* ── Fact chips ───────────────────────────────────────────── */
+
+.facts {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  margin-top: 20px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
 }
+
+.fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 7px 12px;
+}
+
+.fact-hot { background: var(--gold); }
+
+.fact .ico {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* .todo is cream-on-dark by default; on the light hero it needs ink */
+.fact.todo,
+.fact .todo { color: var(--ink-soft); font-style: italic; }
+.fact-hot.todo { color: var(--ink); }
 
 /* ── Buttons ──────────────────────────────────────────────── */
 
@@ -243,16 +271,6 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   gap: 16px;
   padding-bottom: 14px;
   border-bottom: 1.5px solid var(--ink-line);
-}
-
-.num {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--bronze);
-  white-space: nowrap;
-  margin-left: auto;
 }
 
 .sec-lede { margin-top: 16px; }
@@ -526,10 +544,7 @@ button:focus-visible,
   }
   .hero-text { order: 2; }
   .portrait { order: 1; width: 180px; }
-  .portrait figcaption { align-items: flex-start; }
   .grid { grid-template-columns: 1fr; }
-  .sec-row { flex-wrap: wrap; }
-  .num { margin-left: 0; width: 100%; }
 }
 
 @media (max-width: 520px) {
