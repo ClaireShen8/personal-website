@@ -4,7 +4,7 @@
      #C1D9D4  page background
      #183307  tile background / ink (text on light)
      #BFB639  supporting — gold
-     #594C0B  supporting — deep olive
+     #8D7B3B  supporting — bronze
      #E5E7D4  text on dark
    ============================================================ */
 
@@ -12,7 +12,7 @@
   --bg:       #C1D9D4;
   --ink:      #183307;
   --gold:     #BFB639;
-  --bronze:   #594C0B;
+  --bronze:   #8D7B3B;
   --cream:    #E5E7D4;
 
   /* derived */
@@ -21,8 +21,6 @@
   --cream-soft:  rgba(229, 231, 212, 0.72);
   --cream-faint: rgba(229, 231, 212, 0.52);
   --cream-line:  rgba(229, 231, 212, 0.16);
-  /* --bronze is too dark to read against --ink, so edges on dark use cream */
-  --cream-edge:  rgba(229, 231, 212, 0.30);
 
   --sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --display: "Space Grotesk", "Inter", Arial, sans-serif;
@@ -338,7 +336,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   border-radius: 999px;
 }
 
-.tile-tag { color: var(--cream); border: 1px solid var(--cream-edge); }
+.tile-tag { color: var(--cream); border: 1px solid var(--bronze); }
 .tile-state { color: var(--ink); background: var(--gold); }
 
 .tile-title {
@@ -405,7 +403,7 @@ button:focus-visible,
   width: min(720px, calc(100vw - 32px));
   max-height: min(86vh, 900px);
   padding: 0;
-  border: 1.5px solid var(--cream-edge);
+  border: 1.5px solid var(--bronze);
   border-radius: var(--r);
   background: var(--ink);
   color: var(--cream);
