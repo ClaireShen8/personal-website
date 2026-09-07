@@ -1,94 +1,337 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Claire Shen</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Shen</title>
+  <meta name="description" content="Claire Shen — AI major at UC San Diego. Three years building in air-gapped, restricted DoD environments. Building AI/ML and software that makes medicine more affordable." />
+  <meta name="theme-color" content="#C1D9D4" />
 
-  <body>
-    <main class="container">
-      <!-- Top header section -->
-      <header class="top">
-        <!-- Square photo (you will replace assets/profile.jpg) -->
-        <div class="avatar-wrapper">
-        <img
-            class="avatar"
-            src="assets/profile.jpg"
-            alt="Photo of Claire Shen"
-        />
-        </div>
+  <meta property="og:title" content="Claire Shen — AI major at UC San Diego" />
+  <meta property="og:description" content="AI/ML and software for air-gapped environments and for making medicine more affordable." />
+  <meta property="og:type" content="website" />
 
-        <div class="top-right">
-          <h1 class="name">Claire Shen</h1>
-          <p class="subtitle">AI Major at UC San Diego</p>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-          <nav class="button-row" aria-label="Profile links">
-            <a class="btn" href="https://www.linkedin.com/in/claire-l-shen/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
+  <link rel="stylesheet" href="style.css" />
 
-            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noreferrer">
-              Resume
-            </a>
+  <!-- If JS is off, every tile's full write-up renders inline instead of in a modal. -->
+  <noscript><style>
+    .detail[hidden] { display: block !important; margin-top: 22px; }
+    .tile-more { display: none; }
+    .tile { cursor: default; }
+  </style></noscript>
+</head>
 
-            <a class="btn" href="https://github.com/ClaireShen8" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-            <a class="btn" href="mailto:clshen@ucsd.edu">
-              Email
-            </a>
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="mark" href="#top">CLAIRE SHEN</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-cta" href="assets/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ── Hero ───────────────────────────────────────────────── -->
+    <header class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="kick">2nd-year AI major · UC San Diego</p>
+          <h1>Technical work,<br /><span class="accent">pointed at real problems.</span></h1>
+          <p class="lede">
+            Three years building in air-gapped, restricted environments with the DoD, and
+            an ongoing pull toward one question: how do you make medicine more affordable
+            for the people paying for it?
+          </p>
+
+          <nav class="btn-row" aria-label="Profile links">
+            <a class="btn btn-primary" href="mailto:clshen@ucsd.edu">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/claire-l-shen/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="https://github.com/ClaireShen8" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
           </nav>
         </div>
-      </header>
 
-      <hr class="divider" />
+        <figure class="portrait">
+          <img src="assets/profile.jpg" alt="Photo of Claire Shen" />
+          <figcaption><span>Claire Shen</span><span>San Diego, CA</span></figcaption>
+        </figure>
+      </div>
+    </header>
 
-      <!-- Content sections -->
-      <section>
-        <h2>About Me</h2>
-        <p>
-          <!-- Replace with your text -->
-          I’m Claire, an AI major at UC San Diego. I’m interested in building practical
-          machine learning systems, especially projects that connect technical work with real people.
+    <!-- ── About ──────────────────────────────────────────────── -->
+    <section class="sec" id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-row"><h2>About me</h2><span class="num">WHO I AM</span></div>
+        </div>
+        <div class="prose">
+          <p>
+            I'm a 2nd-year AI major at UC San Diego. I care about connecting technical work
+            with the problems real people face day to day.
+          </p>
+          <p>
+            I have three years of experience building projects in air-gapped, restricted
+            environments with the DoD — the kind of place where nothing leaves the building
+            and the tooling has to work without a network. Outside of that, I'm passionate
+            about building AI/ML and software solutions that make medicine more affordable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Professional Experience ────────────────────────────── -->
+    <section class="sec" id="experience">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-row"><h2>Professional experience</h2><span class="num">3 ROLES</span></div>
+          <p class="lede sec-lede">Where I've worked. Click any tile for the full story.</p>
+        </div>
+
+        <div class="grid">
+
+          <!-- NREIP 2026 -->
+          <article class="tile" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="tile-top">
+              <span class="tile-tag">Internship · 2026</span>
+            </div>
+            <h3 class="tile-title">NREIP 2026</h3>
+            <p class="tile-org">Naval Research Enterprise Internship Program</p>
+            <p class="tile-summary todo">
+              [One or two sentences on what this role was and what you owned. This is the
+              text that shows on the tile itself.]
+            </p>
+            <span class="tile-more">Read the full story <span aria-hidden="true">&rarr;</span></span>
+
+            <div class="detail" hidden>
+              <p class="detail-meta todo">[Command / lab] · [Dates] · [Location]</p>
+
+              <section class="block">
+                <h4>The Problem</h4>
+                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+              </section>
+
+              <section class="block">
+                <h4>What I Built</h4>
+                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+              </section>
+
+              <section class="block">
+                <h4>My Impact</h4>
+                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
+              </section>
+            </div>
+          </article>
+
+          <!-- SEAP 2025 -->
+          <article class="tile" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="tile-top">
+              <span class="tile-tag">Internship · 2025</span>
+            </div>
+            <h3 class="tile-title">SEAP 2025</h3>
+            <p class="tile-org">Science &amp; Engineering Apprenticeship Program</p>
+            <p class="tile-summary todo">
+              [One or two sentences on what this role was and what you owned.]
+            </p>
+            <span class="tile-more">Read the full story <span aria-hidden="true">&rarr;</span></span>
+
+            <div class="detail" hidden>
+              <p class="detail-meta todo">[Command / lab] · [Dates] · [Location]</p>
+
+              <section class="block">
+                <h4>The Problem</h4>
+                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+              </section>
+
+              <section class="block">
+                <h4>What I Built</h4>
+                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+              </section>
+
+              <section class="block">
+                <h4>My Impact</h4>
+                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
+              </section>
+            </div>
+          </article>
+
+          <!-- SEAP 2024 -->
+          <article class="tile" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="tile-top">
+              <span class="tile-tag">Internship · 2024</span>
+            </div>
+            <h3 class="tile-title">SEAP 2024</h3>
+            <p class="tile-org">Science &amp; Engineering Apprenticeship Program</p>
+            <p class="tile-summary todo">
+              [One or two sentences on what this role was and what you owned.]
+            </p>
+            <span class="tile-more">Read the full story <span aria-hidden="true">&rarr;</span></span>
+
+            <div class="detail" hidden>
+              <p class="detail-meta todo">[Command / lab] · [Dates] · [Location]</p>
+
+              <section class="block">
+                <h4>The Problem</h4>
+                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+              </section>
+
+              <section class="block">
+                <h4>What I Built</h4>
+                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+              </section>
+
+              <section class="block">
+                <h4>My Impact</h4>
+                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
+              </section>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects ───────────────────────────────────────────── -->
+    <section class="sec" id="projects">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-row"><h2>Projects</h2><span class="num">2 PROJECTS</span></div>
+          <p class="lede sec-lede">Things I built or am building. Click any tile for the full story.</p>
+        </div>
+
+        <div class="grid">
+
+          <!-- DermLens -->
+          <article class="tile" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="tile-top">
+              <span class="tile-tag">Project</span>
+            </div>
+            <h3 class="tile-title">DermLens</h3>
+            <p class="tile-org todo">[Machine learning · Dermatology]</p>
+            <p class="tile-summary todo">
+              [One or two sentences on what DermLens is and what it does.]
+            </p>
+            <span class="tile-more">Read the full story <span aria-hidden="true">&rarr;</span></span>
+
+            <div class="detail" hidden>
+              <p class="detail-meta todo">[Role] · [Dates] · [Stack]</p>
+
+              <section class="block">
+                <h4>The Problem</h4>
+                <p class="todo">[What gap in dermatology care or diagnosis does this address, and for whom?]</p>
+              </section>
+
+              <section class="block">
+                <h4>What I Built</h4>
+                <p class="todo">[The model, the data, the interface — and the decisions behind them.]</p>
+              </section>
+
+              <section class="block">
+                <h4>My Impact</h4>
+                <p class="todo">[Results, validation, users, or what you're working toward next.]</p>
+              </section>
+            </div>
+          </article>
+
+          <!-- HouseMeds -->
+          <article class="tile" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="tile-top">
+              <span class="tile-tag">Project</span>
+              <span class="tile-state">In progress</span>
+            </div>
+            <h3 class="tile-title">HouseMeds</h3>
+            <p class="tile-org">Web tool · Prescription price search</p>
+            <p class="tile-summary">
+              A web tool that searches pre-vetted pharmacies for the cheapest way an entire
+              household — pets included — can fill its prescriptions each month.
+            </p>
+            <span class="tile-more">Read the full story <span aria-hidden="true">&rarr;</span></span>
+
+            <div class="detail" hidden>
+              <p class="detail-meta todo">[Role] · [Dates] · [Stack]</p>
+
+              <section class="block">
+                <h4>The Problem</h4>
+                <p>
+                  Purchasing prescription medications is an expensive, time-consuming process
+                  for many Americans. In many cases, paying out of pocket rather than going
+                  through insurance is the easier and more affordable route — but finding out
+                  whether that's true for a given prescription means checking site after site,
+                  one drug at a time.
+                </p>
+              </section>
+
+              <section class="block">
+                <h4>What I Built</h4>
+                <p>
+                  A web tool that searches pre-vetted pharmacy websites for the most affordable
+                  way for an entire household, pets included, to fill its prescriptions each
+                  month — so the comparison happens once, across every medication in the house,
+                  instead of one drug and one site at a time.
+                </p>
+              </section>
+
+              <section class="block">
+                <h4>My Impact</h4>
+                <p class="todo">
+                  [In progress — fill this in with what it's done so far: savings found in
+                  testing, users, pharmacies covered, or what you're validating next.]
+                </p>
+              </section>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ────────────────────────────────────────────── -->
+    <section class="end" id="contact">
+      <div class="wrap">
+        <p class="kick">Get in touch</p>
+        <h2>Let's build something<br />that actually reaches people.</h2>
+        <p class="lede">
+          I'm looking for roles in AI/ML, health tech, and defense engineering. Happy to talk
+          through the parts I can't put on a page.
         </p>
-      </section>
 
-      <section>
-        <h2>Professional Experience</h2>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="mailto:clshen@ucsd.edu">Email me</a>
+          <a class="btn btn-on-dark" href="https://github.com/ClaireShen8" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-on-dark" href="https://www.linkedin.com/in/claire-l-shen/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn btn-on-dark" href="assets/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+        </div>
 
-        <h3>SEAP Intern</h3>
-        <p>
-          <!-- Replace with your text -->
-          Describe what you did, what you built, and what impact it had. Include tools/skills
-          (e.g., CAD, Python, rapid prototyping, collaboration).
-        </p>
+        <div class="foot">
+          <span>© <span id="year"></span> Claire Shen</span>
+          <span>Built from scratch.</span>
+        </div>
+      </div>
+    </section>
 
-        <h3>DermLens</h3>
-        <p>
-          <!-- Replace with your text -->
-          Summarize DermLens, your role, what problem it solves, and the approach/stack.
-          You can mention dataset scale, experimentation, and your goals for validation/deployment.
-        </p>
-      </section>
+  </main>
 
-      <section>
-        <h2>Miscellaneous</h2>
-        <p>
-          <!-- Replace with your text -->
-          Add anything you want here: clubs, interests, projects-in-progress, or fun facts.
-        </p>
-      </section>
+  <!-- ── Tile detail modal ────────────────────────────────────── -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <button class="modal-x" type="button" aria-label="Close">&times;</button>
+    <div class="modal-in">
+      <p class="modal-tag" id="modal-tag"></p>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <p class="modal-org" id="modal-org"></p>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </dialog>
 
-      <footer class="footer">
-        <p>© <span id="year"></span> Claire Shen</p>
-      </footer>
-    </main>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <script src="app.js"></script>
+</body>
 </html>
