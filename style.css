@@ -288,24 +288,43 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   counter-increment: tile;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  column-gap: 32px;
+  align-items: start;
   background: var(--ink);
   color: var(--cream);
   border: 1.5px solid var(--ink);
   border-radius: var(--r);
-  overflow: hidden;
+  padding: 30px 32px 32px;
 }
 
-.tile-media { margin: 0; }
+/* Square, framed, offset shadow — the hero portrait treatment without the circle. */
+.tile-media {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 10px 10px 0; /* room for the offset shadow */
+}
 
 .tile-media img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
-  border-right: 1.5px solid var(--bronze);
+  border-radius: 4px;
+  border: 3px solid var(--cream);
+  box-shadow: 10px 10px 0 var(--bronze);
 }
 
-.tile-body { padding: 28px 30px 30px; min-width: 0; }
+.tile-body {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+/* Full write-up runs the whole tile width, below the image. */
+.tile-detail {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
 
 .tile::after {
   content: counter(tile, decimal-leading-zero);
@@ -362,8 +381,8 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 /* Full write-up, always visible inside the tile */
 .tile-detail {
-  margin-top: 22px;
-  padding-top: 20px;
+  margin-top: 30px;
+  padding-top: 22px;
   border-top: 1px solid var(--cream-line);
 }
 
@@ -447,13 +466,10 @@ button:focus-visible {
   .hero-text { order: 2; }
   .portrait { order: 1; width: 180px; }
   .grid { grid-template-columns: 1fr; }
-  .tile { grid-template-columns: 1fr; }
-  .tile-media img {
-    height: 200px;
-    border-right: 0;
-    border-bottom: 1.5px solid var(--bronze);
-  }
-  .tile-body { padding: 24px 22px 26px; }
+  .tile { grid-template-columns: 1fr; padding: 24px 24px 26px; }
+  .tile-media { grid-column: 1; max-width: 200px; margin-bottom: 24px; }
+  .tile-body { grid-column: 1; grid-row: 2; }
+  .tile-detail { grid-column: 1; grid-row: 3; }
 }
 
 @media (max-width: 520px) {

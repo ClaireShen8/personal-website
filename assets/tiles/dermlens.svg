@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" role="img" aria-label="Placeholder">
-  <rect width="400" height="520" fill="#1d3d09"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Placeholder">
+  <rect width="400" height="400" fill="#1d3d09"/>
   <g fill="none" stroke="#8D7B3B" stroke-width="1.5" opacity="0.5">
-    <rect x="0.75" y="0.75" width="398.5" height="518.5"/>
-    <circle cx="200" cy="238" r="52"/>
-    <path d="M176 254l18-20 14 15 12-13 24 26"/>
+    <circle cx="200" cy="168" r="46"/>
+    <path d="M179 182l16-18 12 13 11-11 21 23"/>
   </g>
-  <circle cx="216" cy="222" r="7" fill="#BFB639" opacity="0.8"/>
-  <text x="200" y="330" text-anchor="middle" font-family="'JetBrains Mono',monospace"
+  <circle cx="214" cy="154" r="6" fill="#BFB639" opacity="0.8"/>
+  <text x="200" y="264" text-anchor="middle" font-family="'JetBrains Mono',monospace"
         font-size="13" letter-spacing="2.4" fill="#E5E7D4" opacity="0.62">REPLACE ME</text>
-  <text x="200" y="354" text-anchor="middle" font-family="'JetBrains Mono',monospace"
+  <text x="200" y="288" text-anchor="middle" font-family="'JetBrains Mono',monospace"
         font-size="11" letter-spacing="1.6" fill="#E5E7D4" opacity="0.38">DERMLENS</text>
 </svg>
