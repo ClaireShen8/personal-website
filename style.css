@@ -558,3 +558,11 @@ button:focus-visible,
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ── Design-capture mode (see app.js) ─────────────────────── */
+/* ?design=expanded — renders every tile's detail inline so static importers
+   can see it. Mirrors the <noscript> fallback in index.html. */
+
+.design-expanded .detail[hidden] { display: block; margin-top: 22px; }
+.design-expanded .tile-more { display: none; }
+.design-expanded .tile { cursor: default; }
