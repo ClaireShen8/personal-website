@@ -7,19 +7,6 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* Design-capture modes. Static importers (Figma's html.to.design, screenshot
-     tools) snapshot the page as rendered and can't click, so tile details would
-     never appear. Both are opt-in via the query string and inert without it.
-       ?design=expanded        every tile's detail renders inline
-       ?design=modal[&tile=N]  opens tile N's modal on load (1-based, default 1) */
-  var params = new URLSearchParams(location.search);
-  var design = params.get("design");
-
-  if (design === "expanded") {
-    document.documentElement.classList.add("design-expanded");
-    return;
-  }
-
   var modal = document.getElementById("modal");
   if (!modal || typeof modal.showModal !== "function") return; // no <dialog>: details stay inline
 
@@ -87,11 +74,4 @@
     bodyEl.replaceChildren();
     if (opener) { opener.focus(); opener = null; }
   });
-
-  if (design === "modal") {
-    var tiles = document.querySelectorAll(".tile");
-    var n = parseInt(params.get("tile"), 10) || 1;
-    var pick = tiles[Math.min(Math.max(n, 1), tiles.length) - 1];
-    if (pick) open(pick);
-  }
 })();
