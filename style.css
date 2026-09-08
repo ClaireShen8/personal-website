@@ -24,6 +24,7 @@
 
   --sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --slab:    "Roboto Slab", Georgia, serif;
 
   --wrap: 1080px;
   --r:    14px;
@@ -142,7 +143,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 }
 
 .kick {
-  font-family: var(--display);
+  font-family: var(--slab);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -156,6 +157,12 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   color: var(--ink-soft);
   max-width: 62ch;
   margin: 20px 0 0;
+}
+
+.hero .lede {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--ink);
 }
 
 .prose p { margin: 0 0 16px; max-width: 68ch; }
@@ -201,8 +208,8 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--display);
-  font-size: 15px;
+  font-family: var(--slab);
+  font-size: 14px;
   letter-spacing: 0.01em;
   color: var(--ink);
   background: var(--cream);
@@ -298,7 +305,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile-head { min-width: 0; }
 
 .tile-meta {
-  font-family: var(--display);
+  font-family: var(--slab);
   font-size: 14px;
   font-weight: 700;
   color: var(--ink);
@@ -358,7 +365,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile-detail .block:first-of-type { margin-top: 0; }
 
 .tile-detail h4 {
-  font-family: var(--display);
+  font-family: var(--slab);
   font-size: 17px;
   font-weight: 700;
   color: var(--ink);
@@ -409,6 +416,7 @@ button:focus-visible {
   margin-top: 56px;
   padding-top: 22px;
   border-top: 1px solid var(--cream-line);
+  font-family: var(--slab);
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--cream-faint);
