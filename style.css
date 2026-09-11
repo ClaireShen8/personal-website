@@ -22,6 +22,11 @@
   --cream-faint: rgba(229, 231, 212, 0.52);
   --cream-line:  rgba(229, 231, 212, 0.16);
 
+  /* Scrollbars: always visible, a shade darker than the surface they sit on.
+     Defaults are for cream tiles; .sub overrides them for the dark sub-tiles. */
+  --scroll-thumb: #CED0BF;
+  --scroll-track: #DCDECC;
+
   --sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --display: "Playfair Display", Georgia, "Times New Roman", serif;
   --slab:    "Roboto Slab", Georgia, serif;
@@ -430,17 +435,40 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile .block p { color: var(--ink-soft); }
 
 .scroller {
-  overflow-y: auto;
+  /* `scroll`, not `auto`, so the track is always laid out. */
+  overflow-y: scroll;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--bronze) transparent;
 }
 
-.scroller::-webkit-scrollbar { width: 8px; }
-.scroller::-webkit-scrollbar-track { background: transparent; }
-.scroller::-webkit-scrollbar-thumb {
-  background: var(--bronze);
+/* Chrome and Safari: styling these pseudo-elements is what opts the element
+   out of the macOS overlay scrollbar that fades in only while scrolling.
+   Chrome ignores all of them the moment `scrollbar-width` or `scrollbar-color`
+   is set on the same element, so those two live in the @supports block below,
+   where only Firefox can see them. */
+.scroller::-webkit-scrollbar {
+  width: 10px;
+  background: var(--scroll-track);
+}
+.scroller::-webkit-scrollbar-track {
+  background: var(--scroll-track);
   border-radius: 999px;
+}
+.scroller::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 999px;
+  min-height: 36px;
+}
+/* Keep the thumb visible when the pointer is elsewhere on the page. */
+.scroller::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--scroll-thumb);
+}
+
+/* Firefox has no ::-webkit-scrollbar, so it uses the standard properties. */
+@supports not selector(::-webkit-scrollbar) {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  }
 }
 
 .tile-scroller {
@@ -462,6 +490,8 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .sub {
   background: var(--ink);
   color: var(--cream);
+  --scroll-thumb: #0F2004;
+  --scroll-track: #142B06;
   border-radius: 16px;
   padding: 20px 26px 22px;
   transition: box-shadow .15s ease;

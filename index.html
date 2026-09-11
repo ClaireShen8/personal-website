@@ -83,14 +83,17 @@
         </div>
         <div class="prose">
           <p>
-            I'm a 2nd-year AI major at UC San Diego. I care about connecting technical work
-            with the problems real people face day to day.
+            Hi, I'm Claire! I'm in the first cohort of undergrads in AI at UC San Diego. One
+            theme carries across all my work: I care deeply about the end user. I listen
+            carefully and learn the operator's issues before designing a solution. Input from
+            my supervisor and team are essential in analyzing successes and failures in design
+            and implementation.
           </p>
           <p>
-            I have three years of experience building projects in air-gapped, restricted
-            environments with the DoD — the kind of place where nothing leaves the building
-            and the tooling has to work without a network. Outside of that, I'm passionate
-            about building AI/ML and software solutions that make medicine more affordable.
+            My work spans computer vision, ML models, and building agentic workflows. I have
+            faced challenges building in resource-constrained environments within closed
+            hacker-proof military systems. I am also building medical solutions that empower
+            patients to treat skin cancers and take control of their medication prices.
           </p>
         </div>
       </div>
@@ -189,22 +192,30 @@
                         I started by interviewing each of the engineers who had worked on labeling, to
                         understand the pain points. Then, I built a single locally run desktop
                         application in Python with Qt and OpenCV that owns the whole path. The user
-                        scrubs video and marks events, extracts frames progressively at whatever density
-                        the model needs, and draws bounding boxes and keypoints that propagate across
-                        frames — correcting pose-estimation pre-labels rather than starting from an empty
-                        frame. Every exported image and label carries a reference back to its source
-                        video and exact frame, and datasets are written out in a standardized structure
-                        with event-aware train/validation/test splits.
+                        scrubs video and marks events. Frame extraction is progressive — dense at the
+                        start of an event, sparser afterward — with random sampling of non-event frames.
+                        An events gallery shows every event in a video alongside its labeling progress.
+                        The labeling workspace supports bounding boxes and keypoints, keypoint
+                        propagation across a frame range, and pose-estimation pre-labeling that selects
+                        GPU or CPU automatically. Export produces event-grouped output or YOLO format,
+                        with event-aware train/validation/test splits that keep frames from the same
+                        event on one side. The tool enforces one folder layout and offers an opt-in
+                        repair that plans every file move and shows the plan for approval before acting.
+                        I drove development with agentic AI: detailed specs, context carried between
+                        sessions, and manually tweaked the UI in Figma and placed SVGs in the repository
+                        for the agent to apply changes, and a suite of 600 unit/integration tests.
                       </p>
                     </section>
 
                     <section class="block">
                       <h5>My Impact</h5>
                       <p>
-                        Labeling ran at roughly three times its prior speed, and every image and label
-                        became traceable back to its source video and exact frame — so the lab can tell
-                        what has already been labeled, regenerate a dataset on demand, and train new
-                        models without reconstructing that provenance by hand.
+                        Labeling reached about three times its prior speed, cutting a weekly eight-hour
+                        workflow to two across 100GB of video. Every image and label traces back to its
+                        source video and exact frame. I documented the tool's remaining limitations for
+                        whoever picks it up next. My recommendation for the next stage is a
+                        confidence-thresholded review loop, where the model annotates every frame and an
+                        analyst reviews only what it flags as uncertain.
                       </p>
                     </section>
                   </div>
@@ -238,19 +249,41 @@
                   <div class="scroller">
                     <section class="block">
                       <h5>The Problem</h5>
-                      <p class="todo">[What was the lab doing with these reports before, and why did it
-                        not scale?]</p>
+                      <p>
+                        A Navy rapid prototyping lab maintained several hundred reports containing a
+                        mix of tables, structured sections, and narrative text. Analysts manually read
+                        these reports to produce numerical estimates, but the documents followed
+                        inconsistent formats: the available fields varied between reports, and the
+                        location of information on each page could not be predicted. Before automated
+                        extraction or prediction could be attempted, the documents needed to be
+                        converted into a consistent, machine-readable representation.
+                      </p>
                     </section>
 
                     <section class="block">
                       <h5>What I Built</h5>
-                      <p class="todo">[The three stages you scoped, and what stage one does with Docling.]</p>
+                      <p>
+                        I scoped the larger problem into three stages: ingestion, extraction, and
+                        prediction, then defined a three-week sprint around the ingestion stage. I
+                        implemented a layout-aware pipeline using Docling to analyze each page,
+                        identify headings, paragraphs, and tables, apply OCR when necessary, and
+                        convert the reports into structured Markdown while preserving document
+                        organization and table information. I also researched and documented an
+                        architecture for the remaining extraction and prediction stages.
+                      </p>
                     </section>
 
                     <section class="block">
                       <h5>My Impact</h5>
-                      <p class="todo">[Reports processed, time saved, or what the pipeline unblocked for
-                        the team.]</p>
+                      <p>
+                        I transformed a loosely defined automation goal into a concrete development roadmap
+                        and delivered the first foundational component. Instead of building a model
+                        directly on inconsistent PDF files, the pipeline gives downstream systems a
+                        standardized representation of every report. I also identified the need for
+                        validated extraction, historical outcome data, and domain expertise before
+                        prediction modeling, leaving the team with both working ingestion software and
+                        a path for continuing the project.
+                      </p>
                     </section>
                   </div>
 
@@ -279,11 +312,13 @@
               </figure>
 
               <div class="tile-ident">
-                <p class="tile-meta"><span class="todo">[Role]</span> <span class="tile-state">In progress</span></p>
+                <p class="tile-meta">User research &amp; computer vision <span class="tile-state">In progress</span></p>
                 <h3 class="tile-title">DermLens</h3>
-                <p class="tile-org todo">[Machine learning · Dermatology]</p>
-                <p class="tile-summary todo">
-                  [One or two sentences on what DermLens is and what it does.]
+                <p class="tile-org">Teledermatology · Computer vision</p>
+                <p class="tile-summary">
+                  Helped develop a computer-vision-enabled teledermatology platform by conducting user
+                  research, building a longitudinal dataset of more than 5,000 clinical images, and
+                  fine-tuning CNNs to classify treatment-site erythema.
                 </p>
               </div>
             </div>
@@ -291,17 +326,34 @@
             <div class="scroller tile-scroller">
               <section class="block">
                 <h5>The Problem</h5>
-                <p class="todo">[What gap in dermatology care or diagnosis does this address, and for whom?]</p>
+                <p>DermLens is designed to make follow-up for non-surgical skin cancer treatment
+                  more accessible. Patients undergoing topical treatment need their treatment sites
+                  monitored over time, traditionally requiring repeated in-person visits. The
+                  challenge is determining how photos and patient-reported symptoms collected
+                  remotely could provide physicians with useful information about treatment
+                  progression without replacing physician oversight.</p>
               </section>
 
               <section class="block">
                 <h5>What I Built</h5>
-                <p class="todo">[The model, the data, the interface — and the decisions behind them.]</p>
+                <p>I have contributed across the project from its early user-research phase through
+                  computer vision development. I interviewed patients about their treatment
+                  experience and technology habits, helped translate the clinical workflow into
+                  application features and wireframes, and assisted dermatology clinic staff in
+                  assembling a custom longitudinal dataset of more than 5,000 treatment images. On
+                  the machine learning side, I fine-tuned and evaluated convolutional neural
+                  networks for classification of erythema, or treatment-site redness, as an initial
+                  step toward computer-assisted monitoring.</p>
               </section>
 
               <section class="block">
                 <h5>My Impact</h5>
-                <p class="todo">[Results, validation, users, or what you're working toward next.]</p>
+                <p>My work helped move DermLens from a clinical idea toward a data-driven system
+                  that can be evaluated technically. I have helped connect patient and physician
+                  needs to the application's design while building the dataset and baseline computer
+                  vision capabilities needed for future longitudinal monitoring. The project has also
+                  allowed me to apply computer vision to a problem where model performance must
+                  ultimately be evaluated in the context of real clinical decisions.</p>
               </section>
             </div>
           </article>
@@ -314,12 +366,13 @@
               </figure>
 
               <div class="tile-ident">
-                <p class="tile-meta"><span class="todo">[Role]</span> <span class="tile-state">In progress</span></p>
+                <p class="tile-meta">User research &amp; backend development <span class="tile-state">In progress</span></p>
                 <h3 class="tile-title">HouseMeds</h3>
                 <p class="tile-org">Web tool · Prescription price search</p>
                 <p class="tile-summary">
-                  A web tool that searches pre-vetted pharmacies for the cheapest way an entire
-                  household — pets included — can fill its prescriptions each month.
+                  Performing user research and backend development for a household prescription-cost
+                  optimization platform that compares medication prices across pharmacies to identify
+                  lower-cost purchasing strategies.
                 </p>
               </div>
             </div>
@@ -327,25 +380,33 @@
             <div class="scroller tile-scroller">
               <section class="block">
                 <h5>The Problem</h5>
-                <p>Purchasing prescription medications is an expensive, time-consuming process
-                  for many Americans. In many cases, paying out of pocket rather than going
-                  through insurance is the easier and more affordable route — but finding out
-                  whether that's true for a given prescription means checking site after site,
-                  one drug at a time.</p>
+                <p>Cash prices for the same prescription can vary substantially between pharmacies,
+                  and finding the lowest price becomes more complicated when optimizing medications
+                  for an entire household rather than for a single prescription. HouseMeds is
+                  designed to help families compare their medications together and determine a
+                  lower-cost purchasing strategy across pharmacies.</p>
               </section>
 
               <section class="block">
                 <h5>What I Built</h5>
-                <p>A web tool that searches pre-vetted pharmacy websites for the most affordable
-                  way for an entire household, pets included, to fill its prescriptions each
-                  month — so the comparison happens once, across every medication in the house,
-                  instead of one drug and one site at a time.</p>
+                <p>I began by interviewing patients and physicians to understand how people currently
+                  purchase prescriptions and where the process creates friction. I assembled a
+                  five-person team to translate those findings into a full-stack web application. I am
+                  developing the backend using TypeScript and PostgreSQL, integrating pharmacy pricing
+                  through REST APIs, and working on the optimization logic that compares medication
+                  prices at the household level rather than treating every prescription
+                  independently.</p>
               </section>
 
               <section class="block">
                 <h5>My Impact</h5>
-                <p class="todo">[In progress — fill this in with what it's done so far: savings found in
-                  testing, users, pharmacies covered, or what you're validating next.]</p>
+                <p>I have taken the project from an initial healthcare problem through user
+                  research, workflow definition, team formation, and early implementation. My role
+                  has focused on making sure the technical design reflects how patients actually
+                  manage medications while coordinating the work needed to turn those requirements
+                  into a functioning product. Because HouseMeds is still under active development,
+                  its impact so far is the creation of a user-informed architecture and development
+                  team rather than measured patient savings.</p>
               </section>
             </div>
           </article>
@@ -361,8 +422,10 @@
                 <p class="tile-meta">Naval Surface Warfare Center Corona | 2025</p>
                 <h3 class="tile-title">Computer Vision Vehicle Damage Assessment Device</h3>
                 <p class="tile-org">SEAP · Science &amp; Engineering Apprenticeship Program</p>
-                <p class="tile-summary todo">
-                  [One or two sentences on what the device is and what you owned.]
+                <p class="tile-summary">
+                  Helped transform an open-ended AI concept into a real-time corrosion-detection
+                  system by building a custom dataset, fine-tuning a YOLO segmentation model, and
+                  deploying it on Raspberry Pi/Google Coral Edge TPU.
                 </p>
               </div>
             </div>
@@ -370,17 +433,32 @@
             <div class="scroller tile-scroller">
               <section class="block">
                 <h5>The Problem</h5>
-                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+                <p>Our intern team received an unusually open-ended challenge: explore how AI could
+                  help Marines assess vehicle damage. There was no predefined user workflow, dataset,
+                  or technical approach. Any useful solution also needed to account for field
+                  constraints such as mobility, cost, durability, and limited computing resources.</p>
               </section>
 
               <section class="block">
                 <h5>What I Built</h5>
-                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+                <p>After helping narrow the problem to vehicle corrosion detection, our team
+                  collected, cleaned, and labeled more than 1,000 images of corrosion to create a
+                  custom dataset. We fine-tuned a YOLOv11 image-segmentation model to identify rust
+                  and tested the model using live camera input before adapting it for edge hardware
+                  including Raspberry Pi and Google Coral. Because the four-person intern team was
+                  initially researching many of the same problems independently, I also introduced
+                  daily standups and shared workspaces and established more regular communication with
+                  our supervising engineer.</p>
               </section>
 
               <section class="block">
                 <h5>My Impact</h5>
-                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
+                <p>Our team turned a broad directive to "build an AI-enabled vehicle damage tool"
+                  into a working computer vision system capable of identifying corrosion in real
+                  time. I helped take the project through the complete applied machine learning
+                  workflow—from defining a practical problem and building our own dataset to model
+                  fine-tuning and constrained edge deployment—while improving collaboration between
+                  team members working in an unfamiliar technical domain.</p>
               </section>
             </div>
           </article>
@@ -396,8 +474,10 @@
                 <p class="tile-meta">Naval Surface Warfare Center Corona | 2024</p>
                 <h3 class="tile-title">SEAP Internship 2024</h3>
                 <p class="tile-org">Science &amp; Engineering Apprenticeship Program</p>
-                <p class="tile-summary todo">
-                  [One or two sentences on what this role was and what you owned.]
+                <p class="tile-summary">
+                  Designed, reverse-engineered, manufactured, and tested physical components for
+                  Marine end users using CAD and additive manufacturing, turning loosely defined
+                  requirements into deployable solutions.
                 </p>
               </div>
             </div>
@@ -405,17 +485,31 @@
             <div class="scroller tile-scroller">
               <section class="block">
                 <h5>The Problem</h5>
-                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+                <p>My first summer at the Navy's Rapid Prototyping Lab centered on practical
+                  engineering problems brought in by Marines and machinists. Some requirements were
+                  loosely defined, while other projects involved military vehicle components that
+                  were difficult to source through conventional replacement channels. The challenge
+                  was to understand what the end user actually needed and quickly turn that need into
+                  a manufacturable physical solution.</p>
               </section>
 
               <section class="block">
                 <h5>What I Built</h5>
-                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+                <p>I designed, manufactured, and tested a physical component from a machinist's
+                  high-level requirements, communicating directly with Marine end users as the design
+                  progressed and ultimately supporting its deployment on base. I also used Fusion 360
+                  and SOLIDWORKS to reverse-engineer hard-to-source vehicle components and reproduce
+                  them using additive manufacturing.</p>
               </section>
 
               <section class="block">
                 <h5>My Impact</h5>
-                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
+                <p>These projects gave Marine users practical physical solutions rather than designs
+                  that stopped at the prototype stage. By combining direct conversations with end
+                  users, CAD modeling, reverse engineering, fabrication, and iterative testing, I
+                  learned how to take an incomplete real-world requirement and carry it through to a
+                  part that could actually be used. That experience became the foundation for the
+                  user-centered engineering approach I carried into my later Navy and AI projects.</p>
               </section>
             </div>
           </article>
