@@ -27,7 +27,6 @@
       <a class="mark" href="#top">Claire Shen</a>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a class="nav-cta" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
       </div>
@@ -97,124 +96,6 @@
       </div>
     </section>
 
-    <!-- ── Professional Experience ────────────────────────────── -->
-    <section class="sec" id="experience">
-      <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-row"><h2>Professional experience</h2></div>
-        </div>
-
-        <div class="grid">
-
-          <article class="tile">
-            <div class="tile-head">
-              <p class="tile-meta">Naval Surface Warfare Center Corona | 2026</p>
-              <h3 class="tile-title">NREIP Internship</h3>
-              <p class="tile-org">Naval Research Enterprise Internship Program</p>
-
-              <figure class="tile-media">
-                <img src="assets/tiles/nreip-2026.jpg" alt="Claire Shen presenting a research poster to attendees at NREIP" />
-              </figure>
-            </div>
-
-            <div class="tile-detail">
-              <p class="tile-summary">
-                As an AI/ML engineering intern at a Navy range systems lab, I built an offline
-                video labeling application in Python, PySide6, and OpenCV that owns the full path
-                from raw range video to exported training data — event marking, progressive frame
-                extraction, bounding-box and keypoint labeling with propagation, pose-estimation
-                pre-labeling, and event-aware train/validation/test splits. It brought labeling to
-                roughly three times its prior speed and made every image and label traceable back
-                to its source video and exact frame.
-              </p>
-
-              <section class="block">
-                <h4>The Problem</h4>
-                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
-              </section>
-
-              <section class="block">
-                <h4>What I Built</h4>
-                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
-              </section>
-
-              <section class="block">
-                <h4>My Impact</h4>
-                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
-              </section>
-            </div>
-          </article>
-
-          <article class="tile">
-            <div class="tile-head">
-              <p class="tile-meta todo">[Command / lab] | 2025</p>
-              <h3 class="tile-title">SEAP 2025</h3>
-              <p class="tile-org">Science &amp; Engineering Apprenticeship Program</p>
-
-              <figure class="tile-media">
-                <img src="assets/tiles/seap-2025.svg" alt="SEAP 2025" />
-              </figure>
-            </div>
-
-            <div class="tile-detail">
-              <p class="tile-summary todo">
-                [One or two sentences on what this role was and what you owned.]
-              </p>
-
-              <section class="block">
-                <h4>The Problem</h4>
-                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
-              </section>
-
-              <section class="block">
-                <h4>What I Built</h4>
-                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
-              </section>
-
-              <section class="block">
-                <h4>My Impact</h4>
-                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
-              </section>
-            </div>
-          </article>
-
-          <article class="tile">
-            <div class="tile-head">
-              <p class="tile-meta todo">[Command / lab] | 2024</p>
-              <h3 class="tile-title">SEAP 2024</h3>
-              <p class="tile-org">Science &amp; Engineering Apprenticeship Program</p>
-
-              <figure class="tile-media">
-                <img src="assets/tiles/seap-2024.svg" alt="SEAP 2024" />
-              </figure>
-            </div>
-
-            <div class="tile-detail">
-              <p class="tile-summary todo">
-                [One or two sentences on what this role was and what you owned.]
-              </p>
-
-              <section class="block">
-                <h4>The Problem</h4>
-                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
-              </section>
-
-              <section class="block">
-                <h4>What I Built</h4>
-                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
-              </section>
-
-              <section class="block">
-                <h4>My Impact</h4>
-                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
-              </section>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
     <!-- ── Projects ───────────────────────────────────────────── -->
     <section class="sec" id="projects">
       <div class="wrap">
@@ -224,59 +105,228 @@
 
         <div class="grid">
 
-          <article class="tile">
-            <div class="tile-head">
-              <p class="tile-meta todo">[Role] | [Dates]</p>
-              <h3 class="tile-title">DermLens</h3>
-              <p class="tile-org todo">[Machine learning · Dermatology]</p>
+          <!-- Note: what NREIP and SEAP are -->
+          <aside class="note-tile">
+            <div class="note-label">
+              <p class="note-kick">Note:</p>
+              <p class="note-name">NREIP &amp; SEAP</p>
+            </div>
+            <p class="note-body">
+              NREIP and SEAP are competitive, paid summer internship programs sponsored by the
+              Department of the Navy (DoN). Over the course of 3 summers, I have interned at Naval
+              Surface Warfare Center (NSWC) Corona, developing software and mechanical solutions
+              alongside engineering professionals in DoN labs.
+            </p>
+          </aside>
 
+          <!-- ── NREIP Internship — parent tile with sub-projects ── -->
+          <article class="tile tile-parent">
+            <div class="tile-top">
+              <figure class="tile-media">
+                <img src="assets/tiles/nreip-2026.jpg" alt="Claire Shen presenting a research poster to attendees at NREIP" />
+              </figure>
+
+              <div class="tile-ident">
+                <p class="tile-meta">Naval Surface Warfare Center Corona | 2026</p>
+                <h3 class="tile-title">NREIP Internship</h3>
+                <p class="tile-org">Naval Research Enterprise Internship Program</p>
+                <p class="tile-summary">
+                  This summer I had the opportunity to intern at both a software engineering lab
+                  (6 weeks) and a rapid prototyping lab (4 weeks). The below projects detail my
+                  primary work from the internship, on 2 separate project sprints.
+                </p>
+              </div>
+            </div>
+
+            <div class="subs">
+
+              <!-- Sub-project 1 -->
+              <section class="sub" data-sub>
+                <h4 class="sub-title">Air-Gapped Desktop Video Annotation Application</h4>
+
+                <div class="sub-collapsed" data-sub-collapsed>
+                  <p class="sub-summary">
+                    Built a locally run Python desktop application that takes a multi-hour video from
+                    scrubbing through to a training-ready dataset, with model-assisted pre-labeling and
+                    full traceability from every image back to its source frame, vastly optimizing the
+                    data labeling workflow<button class="pill" type="button" data-sub-more aria-expanded="false">
+                      <span class="pill-text">Click to see more</span>
+                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                  </p>
+                </div>
+
+                <div class="sub-expanded" data-sub-expanded hidden>
+                  <div class="scroller">
+                    <section class="block">
+                      <h5>The Problem</h5>
+                      <p>
+                        The lab I interned at had a major, ongoing computer vision project that ran
+                        inference on real-time video feed. The models they had trained were effective,
+                        but the data labeling process was gradually becoming an insurmountable
+                        bottleneck. The training video footage, acquired off-site, could be as short as
+                        15 minutes or multiple hours long. So, software engineers took hours out of the
+                        week to manually scrub through long videos, crop events into smaller clips, and
+                        mark coordinates frame by frame. Working with sensitive data meant that the
+                        entire process needed to be air-gapped (completely isolated from the cloud,
+                        managed locally). This made dataset management the most difficult of all.
+                        Multiple people had worked on the labeling effort over the years, without any
+                        standardized folder structure or labeling format — making it difficult to trace
+                        labeled data to its source, discern which data was labeled/unlabeled, and
+                        generate new datasets to train more accurate models.
+                      </p>
+                      <p>
+                        With only 4 weeks left in my internship, I turned a 4-hour weekly labeling
+                        assignment into a new project sprint: building an offline application that
+                        streamlined the entire video-labeling lifecycle, from high-speed scrubbing and
+                        AI-assisted annotation to standardized, YOLO-ready dataset export.
+                      </p>
+                    </section>
+
+                    <section class="block">
+                      <h5>What I Built</h5>
+                      <p>
+                        I started by interviewing each of the engineers who had worked on labeling, to
+                        understand the pain points. Then, I built a single locally run desktop
+                        application in Python with Qt and OpenCV that owns the whole path. The user
+                        scrubs video and marks events, extracts frames progressively at whatever density
+                        the model needs, and draws bounding boxes and keypoints that propagate across
+                        frames — correcting pose-estimation pre-labels rather than starting from an empty
+                        frame. Every exported image and label carries a reference back to its source
+                        video and exact frame, and datasets are written out in a standardized structure
+                        with event-aware train/validation/test splits.
+                      </p>
+                    </section>
+
+                    <section class="block">
+                      <h5>My Impact</h5>
+                      <p>
+                        Labeling ran at roughly three times its prior speed, and every image and label
+                        became traceable back to its source video and exact frame — so the lab can tell
+                        what has already been labeled, regenerate a dataset on demand, and train new
+                        models without reconstructing that provenance by hand.
+                      </p>
+                    </section>
+                  </div>
+
+                  <div class="sub-foot">
+                    <button class="pill pill-less" type="button" data-sub-less>
+                      <span class="pill-text">See less</span>
+                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Sub-project 2 -->
+              <section class="sub" data-sub>
+                <h4 class="sub-title">Ingestion Pipeline for Unstructured PDFs</h4>
+
+                <div class="sub-collapsed" data-sub-collapsed>
+                  <p class="sub-summary">
+                    Scoped a 3-stage pipeline for turning hundreds of inconsistently formatted reports
+                    into automated numerical predictions, and implemented stage one with Docling,
+                    converting unstructured PDFs into structured Markdown that preserves tables and
+                    document layout.<button class="pill" type="button" data-sub-more aria-expanded="false">
+                      <span class="pill-text">Click to see more</span>
+                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                  </p>
+                </div>
+
+                <div class="sub-expanded" data-sub-expanded hidden>
+                  <div class="scroller">
+                    <section class="block">
+                      <h5>The Problem</h5>
+                      <p class="todo">[What was the lab doing with these reports before, and why did it
+                        not scale?]</p>
+                    </section>
+
+                    <section class="block">
+                      <h5>What I Built</h5>
+                      <p class="todo">[The three stages you scoped, and what stage one does with Docling.]</p>
+                    </section>
+
+                    <section class="block">
+                      <h5>My Impact</h5>
+                      <p class="todo">[Reports processed, time saved, or what the pipeline unblocked for
+                        the team.]</p>
+                    </section>
+                  </div>
+
+                  <div class="sub-foot">
+                    <button class="pill pill-less" type="button" data-sub-less>
+                      <span class="pill-text">See less</span>
+                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            <p class="tile-note">
+              Note: I was honored to place 3rd of 30 interns for the final technical presentation to
+              base leadership!
+            </p>
+          </article>
+
+          <!-- ── DermLens ───────────────────────────────────────── -->
+          <article class="tile">
+            <div class="tile-top">
               <figure class="tile-media">
                 <img src="assets/tiles/dermlens.svg" alt="DermLens" />
               </figure>
+
+              <div class="tile-ident">
+                <p class="tile-meta"><span class="todo">[Role]</span> <span class="tile-state">In progress</span></p>
+                <h3 class="tile-title">DermLens</h3>
+                <p class="tile-org todo">[Machine learning · Dermatology]</p>
+                <p class="tile-summary todo">
+                  [One or two sentences on what DermLens is and what it does.]
+                </p>
+              </div>
             </div>
 
-            <div class="tile-detail">
-              <p class="tile-summary todo">
-                [One or two sentences on what DermLens is and what it does.]
-              </p>
-
+            <div class="scroller tile-scroller">
               <section class="block">
-                <h4>The Problem</h4>
+                <h5>The Problem</h5>
                 <p class="todo">[What gap in dermatology care or diagnosis does this address, and for whom?]</p>
               </section>
 
               <section class="block">
-                <h4>What I Built</h4>
+                <h5>What I Built</h5>
                 <p class="todo">[The model, the data, the interface — and the decisions behind them.]</p>
               </section>
 
               <section class="block">
-                <h4>My Impact</h4>
+                <h5>My Impact</h5>
                 <p class="todo">[Results, validation, users, or what you're working toward next.]</p>
               </section>
             </div>
           </article>
 
+          <!-- ── HouseMeds ──────────────────────────────────────── -->
           <article class="tile">
-            <div class="tile-head">
-              <p class="tile-meta todo">[Role] | [Dates]</p>
-              <span class="tile-state">In progress</span>
-              <h3 class="tile-title">HouseMeds</h3>
-              <p class="tile-org">Web tool · Prescription price search</p>
-
+            <div class="tile-top">
               <figure class="tile-media">
                 <img src="assets/tiles/housemeds.svg" alt="HouseMeds" />
               </figure>
+
+              <div class="tile-ident">
+                <p class="tile-meta"><span class="todo">[Role]</span> <span class="tile-state">In progress</span></p>
+                <h3 class="tile-title">HouseMeds</h3>
+                <p class="tile-org">Web tool · Prescription price search</p>
+                <p class="tile-summary">
+                  A web tool that searches pre-vetted pharmacies for the cheapest way an entire
+                  household — pets included — can fill its prescriptions each month.
+                </p>
+              </div>
             </div>
 
-            <div class="tile-detail">
-              <p class="tile-summary">
-                A web tool that searches pre-vetted pharmacies for the cheapest way an entire
-                household — pets included — can fill its prescriptions each month.
-              </p>
-
+            <div class="scroller tile-scroller">
               <section class="block">
-                <h4>The Problem</h4>
+                <h5>The Problem</h5>
                 <p>Purchasing prescription medications is an expensive, time-consuming process
                   for many Americans. In many cases, paying out of pocket rather than going
                   through insurance is the easier and more affordable route — but finding out
@@ -285,7 +335,7 @@
               </section>
 
               <section class="block">
-                <h4>What I Built</h4>
+                <h5>What I Built</h5>
                 <p>A web tool that searches pre-vetted pharmacy websites for the most affordable
                   way for an entire household, pets included, to fill its prescriptions each
                   month — so the comparison happens once, across every medication in the house,
@@ -293,9 +343,79 @@
               </section>
 
               <section class="block">
-                <h4>My Impact</h4>
+                <h5>My Impact</h5>
                 <p class="todo">[In progress — fill this in with what it's done so far: savings found in
                   testing, users, pharmacies covered, or what you're validating next.]</p>
+              </section>
+            </div>
+          </article>
+
+          <!-- ── SEAP 2025 ──────────────────────────────────────── -->
+          <article class="tile">
+            <div class="tile-top">
+              <figure class="tile-media">
+                <img src="assets/tiles/seap-2025.svg" alt="Computer vision vehicle damage assessment device" />
+              </figure>
+
+              <div class="tile-ident">
+                <p class="tile-meta">Naval Surface Warfare Center Corona | 2025</p>
+                <h3 class="tile-title">Computer Vision Vehicle Damage Assessment Device</h3>
+                <p class="tile-org">SEAP · Science &amp; Engineering Apprenticeship Program</p>
+                <p class="tile-summary todo">
+                  [One or two sentences on what the device is and what you owned.]
+                </p>
+              </div>
+            </div>
+
+            <div class="scroller tile-scroller">
+              <section class="block">
+                <h5>The Problem</h5>
+                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+              </section>
+
+              <section class="block">
+                <h5>What I Built</h5>
+                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+              </section>
+
+              <section class="block">
+                <h5>My Impact</h5>
+                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
+              </section>
+            </div>
+          </article>
+
+          <!-- ── SEAP 2024 ──────────────────────────────────────── -->
+          <article class="tile">
+            <div class="tile-top">
+              <figure class="tile-media">
+                <img src="assets/tiles/seap-2024.svg" alt="SEAP Internship 2024" />
+              </figure>
+
+              <div class="tile-ident">
+                <p class="tile-meta">Naval Surface Warfare Center Corona | 2024</p>
+                <h3 class="tile-title">SEAP Internship 2024</h3>
+                <p class="tile-org">Science &amp; Engineering Apprenticeship Program</p>
+                <p class="tile-summary todo">
+                  [One or two sentences on what this role was and what you owned.]
+                </p>
+              </div>
+            </div>
+
+            <div class="scroller tile-scroller">
+              <section class="block">
+                <h5>The Problem</h5>
+                <p class="todo">[What was broken, slow, or missing before you got there? Who felt it?]</p>
+              </section>
+
+              <section class="block">
+                <h5>What I Built</h5>
+                <p class="todo">[What you actually made, and the approach and stack behind it.]</p>
+              </section>
+
+              <section class="block">
+                <h5>My Impact</h5>
+                <p class="todo">[What changed because of it — numbers, adoption, time saved, decisions unblocked.]</p>
               </section>
             </div>
           </article>
