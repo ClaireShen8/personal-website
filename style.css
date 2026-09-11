@@ -495,7 +495,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .sub-scroller,
 .sub-expanded .scroller {
-  max-height: 470px;
+  max-height: 352px;
   padding-right: 14px;
 }
 
@@ -607,7 +607,7 @@ button:focus-visible {
   .tile-media { max-width: 220px; margin: 0 10px 10px 0; }
   .note-tile { grid-template-columns: 1fr; row-gap: 10px; padding: 22px 24px 26px; }
   .sub { padding: 18px 20px 20px; }
-  .sub-expanded .scroller { max-height: 360px; }
+  .sub-expanded .scroller { max-height: 270px; }
 }
 
 @media (max-width: 520px) {
