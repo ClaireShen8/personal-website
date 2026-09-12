@@ -22,8 +22,8 @@
   --cream-faint: rgba(229, 231, 212, 0.52);
   --cream-line:  rgba(229, 231, 212, 0.16);
 
-  /* Scrollbars: always visible, a shade darker than the surface they sit on.
-     Defaults are for cream tiles; .sub overrides them for the dark sub-tiles. */
+  /* Scrollbars: always visible, one shade off the surface they sit on — darker
+     on the cream tiles, lighter on the dark sub-tiles, which override these. */
   --scroll-thumb: #CED0BF;
   --scroll-track: #DCDECC;
 
@@ -495,8 +495,8 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .sub {
   background: var(--ink);
   color: var(--cream);
-  --scroll-thumb: #0F2004;
-  --scroll-track: #142B06;
+  --scroll-thumb: #314920;
+  --scroll-track: #243B13;
   border-radius: 16px;
   padding: 20px 26px 22px;
   transition: box-shadow .15s ease;
