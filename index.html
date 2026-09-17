@@ -163,58 +163,55 @@
                     <section class="block">
                       <h5>The Problem</h5>
                       <p>
-                        The lab I interned at had a major, ongoing computer vision project that ran
-                        inference on real-time video feed. The models they had trained were effective,
-                        but the data labeling process was gradually becoming an insurmountable
-                        bottleneck. The training video footage, acquired off-site, could be as short as
-                        15 minutes or multiple hours long. So, software engineers took hours out of the
-                        week to manually scrub through long videos, crop events into smaller clips, and
-                        mark coordinates frame by frame. Working with sensitive data meant that the
-                        entire process needed to be air-gapped (completely isolated from the cloud,
-                        managed locally). This made dataset management the most difficult of all.
-                        Multiple people had worked on the labeling effort over the years, without any
-                        standardized folder structure or labeling format — making it difficult to trace
-                        labeled data to its source, discern which data was labeled/unlabeled, and
-                        generate new datasets to train more accurate models.
+                        A computer vision team was spending hours each week manually scrubbing
+                        long videos, isolating events, and labeling frames for model training.
+                        Because the data was sensitive, the entire workflow had to remain
+                        air-gapped, which made dataset organization and traceability
+                        especially difficult. Years of inconsistent folder structures and
+                        annotation formats had created a major bottleneck in producing
+                        reliable training datasets.
                       </p>
                       <p>
-                        With only 4 weeks left in my internship, I turned a 4-hour weekly labeling
-                        assignment into a new project sprint: building an offline application that
-                        streamlined the entire video-labeling lifecycle, from high-speed scrubbing and
-                        AI-assisted annotation to standardized, YOLO-ready dataset export.
+                        With four weeks left in my internship, I turned a 4 hour per week
+                        labeling assignment into a project sprint to build an offline
+                        application that streamlined the full video-labeling lifecycle.
                       </p>
                     </section>
 
                     <section class="block">
                       <h5>What I Built</h5>
                       <p>
-                        I started by interviewing each of the engineers who had worked on labeling, to
-                        understand the pain points. Then, I built a single locally run desktop
-                        application in Python with Qt and OpenCV that owns the whole path. The user
-                        scrubs video and marks events. Frame extraction is progressive — dense at the
-                        start of an event, sparser afterward — with random sampling of non-event frames.
-                        An events gallery shows every event in a video alongside its labeling progress.
-                        The labeling workspace supports bounding boxes and keypoints, keypoint
-                        propagation across a frame range, and pose-estimation pre-labeling that selects
-                        GPU or CPU automatically. Export produces event-grouped output or YOLO format,
-                        with event-aware train/validation/test splits that keep frames from the same
-                        event on one side. The tool enforces one folder layout and offers an opt-in
-                        repair that plans every file move and shows the plan for approval before acting.
-                        I drove development with agentic AI: detailed specs, context carried between
-                        sessions, and manually tweaked the UI in Figma and placed SVGs in the repository
-                        for the agent to apply changes, and a suite of 600 unit/integration tests.
+                        After interviewing the engineers who used the existing workflow, I
+                        built a Python desktop application with Qt and OpenCV for video
+                        review, event extraction, annotation, dataset management, and
+                        YOLO-ready export.
+                      </p>
+                      <p>
+                        The application includes high-speed video scrubbing, progressive frame
+                        sampling, bounding-box and keypoint annotation, keypoint propagation,
+                        and GPU/CPU-aware pose-estimation pre-labeling. It also generates
+                        event-aware train/validation/test splits to prevent related frames
+                        from leaking across datasets and enforces a standardized local folder
+                        structure with a reviewable file-repair workflow.
+                      </p>
+                      <p>
+                        I used agentic AI throughout development to implement detailed
+                        specifications and iterate rapidly, while manually designing the
+                        interface in Figma and validating the application with a suite of 600
+                        unit and integration tests.
                       </p>
                     </section>
 
                     <section class="block">
                       <h5>My Impact</h5>
                       <p>
-                        Labeling reached about three times its prior speed, cutting a weekly eight-hour
-                        workflow to two across 100GB of video. Every image and label traces back to its
-                        source video and exact frame. I documented the tool's remaining limitations for
-                        whoever picks it up next. My recommendation for the next stage is a
-                        confidence-thresholded review loop, where the model annotates every frame and an
-                        analyst reviews only what it flags as uncertain.
+                        Converted a tedious labeling task into a streamlined workflow, cutting
+                        a weekly 8 hour workflow to 2 across 100GB of video. Every image and
+                        label traces back to its source video and exact frame. I documented
+                        the tool's remaining limitations for whoever picks it up next. My
+                        recommendation for the next stage is a confidence-thresholded review
+                        loop, where the model annotates every frame and an analyst reviews
+                        only what it flags as uncertain.
                       </p>
                     </section>
                   </div>
@@ -234,7 +231,8 @@
 
                 <div class="sub-collapsed" data-sub-collapsed>
                   <p class="sub-summary">
-                    Scoped a 3-stage pipeline for turning hundreds of inconsistently formatted reports
+                    Scoped a 3-stage pipeline for turning hundreds of inconsistently formatted
+                    reports
                     into automated numerical predictions, and implemented stage one with Docling,
                     converting unstructured PDFs into structured Markdown that preserves tables and
                     document layout.<button class="pill" type="button" data-sub-more aria-expanded="false">
