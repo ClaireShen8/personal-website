@@ -303,6 +303,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   color: var(--cream);
   border-radius: 16px;
   padding: 22px 34px 26px;
+  box-shadow: 4px 4px 4px rgba(24, 51, 7, 0.3);
 }
 
 .note-kick {
@@ -345,6 +346,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   color: var(--ink);
   border-radius: 18px;
   padding: 34px 38px 38px;
+  box-shadow: 4px 4px 4px rgba(24, 51, 7, 0.3);
 }
 
 /* Identity strip: photo on the left, name and summary on the right. */
