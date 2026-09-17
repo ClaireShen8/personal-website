@@ -580,6 +580,36 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .sub .block-list { color: var(--cream); }
 .sub .todo { color: var(--cream-soft); }
 
+/* ── NREIP parent tile: light sub-tiles and write-up blocks ── */
+/* These sub-tiles sit on a light panel rather than the dark ink used
+   elsewhere, so their text runs ink-on-light and the scrollbar is shaded off
+   that panel the same way the cream tiles shade theirs. */
+.tile-parent .sub {
+  background: #CED0BF;
+  color: var(--ink);
+  --scroll-thumb: #B7B9AA;
+  --scroll-track: #C5C7B7;
+}
+
+.tile-parent .sub-title,
+.tile-parent .sub-summary { color: var(--ink); }
+
+.tile-parent .sub .block {
+  background: #CED0BF;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 18px 20px 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tile-parent .sub .block p,
+.tile-parent .sub .block h5,
+.tile-parent .sub .block-list { color: var(--ink); }
+.tile-parent .sub .todo { color: var(--ink-soft); }
+
+/* room for the block shadows so they are not clipped by the scroll box */
+.tile-parent .sub-expanded .scroller { padding-bottom: 6px; }
+
 .sub-scroller,
 .sub-expanded .scroller {
   max-height: 352px;
