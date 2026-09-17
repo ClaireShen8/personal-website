@@ -415,6 +415,30 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   margin: 18px 0 0;
 }
 
+/* External links under a tile summary (site, poster, demo, repo). */
+.tile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tile-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--slab);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--cream);
+  background: var(--ink);
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background .2s ease, color .2s ease;
+}
+.tile-link:hover,
+.tile-link:focus-visible { background: var(--gold); color: var(--ink); }
+
 /* Square, framed, offset shadow — the hero portrait treatment without the circle. */
 .tile-media {
   max-width: 280px;
