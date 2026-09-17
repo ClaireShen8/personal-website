@@ -477,6 +477,17 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 }
 .block p:last-child { margin-bottom: 0; }
 
+.block-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.block-list li { margin: 0 0 2px; }
+.block-list:last-child { margin-bottom: 0; }
+
+.tile .block-list { color: var(--ink); }
+
 .tile .block p { color: var(--ink); }
 
 .scroller {
@@ -566,6 +577,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .sub .block p { color: var(--cream); }
 .sub .block h5 { color: var(--cream); }
+.sub .block-list { color: var(--cream); }
 .sub .todo { color: var(--cream-soft); }
 
 .sub-scroller,
