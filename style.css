@@ -146,6 +146,8 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   -webkit-box-decoration-break: clone;
   padding: 2px 8px 6px;
   margin-left: -4px;
+  /* keep the highlighted phrase on one line so narrow screens don't split it */
+  white-space: nowrap;
 }
 
 .kick {
