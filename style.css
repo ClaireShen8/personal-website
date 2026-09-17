@@ -398,7 +398,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile-summary {
   font-size: 15px;
   line-height: 1.7;
-  color: var(--ink-soft);
+  color: var(--ink);
   margin: 18px 0 0;
 }
 
@@ -438,7 +438,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 }
 .block p:last-child { margin-bottom: 0; }
 
-.tile .block p { color: var(--ink-soft); }
+.tile .block p { color: var(--ink); }
 
 .scroller {
   /* `scroll`, not `auto`, so the track is always laid out. */
@@ -581,7 +581,8 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile-note {
   text-align: center;
   font-size: 15px;
-  color: var(--ink-soft);
+  color: var(--ink);
+  font-weight: 700;
   margin: 30px 0 0;
 }
 
