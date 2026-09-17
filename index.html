@@ -85,14 +85,14 @@
             Hi, I'm Claire! I'm in the first cohort of undergrads in AI at UC San Diego. One
             theme carries across all my work: I care deeply about the end user. I listen
             carefully and learn the operator's issues before designing a solution. Input from
-            my supervisor and team are essential in analyzing successes and failures in design
+            my supervisor and team is essential in analyzing successes and failures in design
             and implementation.
           </p>
           <p>
             My work spans computer vision, ML models, and building agentic workflows. I have
-            faced challenges building in resource-constrained environments within closed
-            hacker-proof military systems. I am also building medical solutions that empower
-            patients to treat skin cancers and take control of their medication prices.
+            faced challenges building in resource-constrained environments within air-gapped
+            (completely offline) military systems. I am also passionate about building medical
+            solutions that help provide accessible, affordable healthcare to patients.
           </p>
         </div>
       </div>
@@ -247,21 +247,30 @@
                     <section class="block">
                       <h5>The Problem</h5>
                       <p>
-                        A Navy rapid prototyping lab maintained several hundred reports containing a
-                        mix of tables, structured sections, and narrative text. Analysts manually read
-                        these reports to produce numerical estimates, but the documents followed
-                        inconsistent formats: the available fields varied between reports, and the
-                        location of information on each page could not be predicted. Before automated
-                        extraction or prediction could be attempted, the documents needed to be
-                        converted into a consistent, machine-readable representation.
+                        A Navy rapid prototyping lab maintained hundreds of part malfunction
+                        reports. Their goal was to train a machine learning model to predict
+                        when a part will malfunction based on historical data. This would reduce
+                        the manual labor of analysts who read through these lengthy reports to
+                        produce estimates.
+                      </p>
+                      <p>
+                        The problem: the data was unstructured and unstandardized. Documents
+                        contained a mix of tables, structured sections, and narrative text. The
+                        available fields varied between reports, and the location of information
+                        on each page could not be predicted.
+                      </p>
+                      <p>
+                        Before automated extraction or prediction could be attempted, the
+                        documents needed to be converted into a consistent, machine-readable
+                        representation.
                       </p>
                     </section>
 
                     <section class="block">
                       <h5>What I Built</h5>
                       <p>
-                        I scoped the larger problem into three stages: ingestion, extraction, and
-                        prediction, then defined a three-week sprint around the ingestion stage. I
+                        I scoped the larger problem into 3 stages: ingestion, extraction, and
+                        prediction, then defined a 3 week sprint around the ingestion stage. I
                         implemented a layout-aware pipeline using Docling to analyze each page,
                         identify headings, paragraphs, and tables, apply OCR when necessary, and
                         convert the reports into structured Markdown while preserving document
@@ -273,13 +282,14 @@
                     <section class="block">
                       <h5>My Impact</h5>
                       <p>
-                        I transformed a loosely defined automation goal into a concrete development roadmap
-                        and delivered the first foundational component. Instead of building a model
-                        directly on inconsistent PDF files, the pipeline gives downstream systems a
-                        standardized representation of every report. I also identified the need for
-                        validated extraction, historical outcome data, and domain expertise before
-                        prediction modeling, leaving the team with both working ingestion software and
-                        a path for continuing the project.
+                        I transformed a loosely defined automation goal into a concrete
+                        development roadmap and delivered the first foundational component.
+                        Instead of building a model directly on inconsistent PDF files, the
+                        pipeline gives downstream systems a standardized representation of every
+                        report. I also identified the need for validated extraction, historical
+                        outcome data, and domain expertise before prediction modeling, leaving
+                        the team with both working ingestion software and a path for continuing
+                        the project.
                       </p>
                     </section>
                   </div>
