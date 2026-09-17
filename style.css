@@ -589,6 +589,13 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   color: var(--ink);
   --scroll-thumb: #B7B9AA;
   --scroll-track: #C5C7B7;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* keep the drop shadow under the gold hover offset */
+.tile-parent .sub:hover,
+.tile-parent .sub:focus-within {
+  box-shadow: 5px 5px 0 0 var(--gold), 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .tile-parent .sub-title,
@@ -599,16 +606,12 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   color: var(--ink);
   border-radius: 12px;
   padding: 18px 20px 20px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .tile-parent .sub .block p,
 .tile-parent .sub .block h5,
 .tile-parent .sub .block-list { color: var(--ink); }
 .tile-parent .sub .todo { color: var(--ink-soft); }
-
-/* room for the block shadows so they are not clipped by the scroll box */
-.tile-parent .sub-expanded .scroller { padding-bottom: 6px; }
 
 .sub-scroller,
 .sub-expanded .scroller {
