@@ -373,6 +373,9 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .tile-ident { min-width: 0; }
 
+/* Tiles whose media is the wide two-pane frame get a roomier media column. */
+.tile-top-wide { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); }
+
 .tile-meta {
   display: flex;
   align-items: center;
@@ -455,6 +458,33 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   border: 3px solid var(--cream);
   box-shadow: 10px 10px 0 var(--bronze);
 }
+
+/* DermLens shares one frame between two images: app screen left, dataset right.
+   Wider than the square media so each pane keeps its own proportions uncropped. */
+.tile-media-split {
+  display: grid;
+  grid-template-columns: 42.4% 1fr;
+  gap: 3px;
+  max-width: 340px;
+  aspect-ratio: 11 / 10;
+  background: var(--cream);
+  border-radius: 6px;
+  border: 3px solid var(--cream);
+  box-shadow: 10px 10px 0 var(--bronze);
+  overflow: hidden;
+}
+
+.tile-media-split .split-pane {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.tile-media-split .split-pane-app { object-fit: cover; object-position: top center; }
+.tile-media-split .split-pane-data { object-fit: cover; }
 
 /* ── Write-up blocks + scroll region ──────────────────────── */
 
@@ -726,6 +756,8 @@ button:focus-visible {
   .tile { padding: 26px 24px 28px; }
   .tile-top { grid-template-columns: 1fr; row-gap: 24px; }
   .tile-media { max-width: 220px; margin: 0 10px 10px 0; }
+  .tile-top-wide { grid-template-columns: 1fr; }
+  .tile-media-split { max-width: 320px; }
   .note-tile { grid-template-columns: 1fr; row-gap: 10px; padding: 22px 24px 26px; }
   .sub { padding: 18px 20px 20px; }
   .sub-expanded .scroller { max-height: 270px; }
