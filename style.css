@@ -112,7 +112,7 @@ a { color: inherit; }
 .nav-links a {
   font-size: 14px;
   font-weight: 500;
-  color: var(--cream-soft);
+  color: var(--cream);
   text-decoration: none;
   padding: 7px 12px;
   border-radius: 8px;
