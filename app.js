@@ -1,12 +1,9 @@
-/* Footer year, plus the expand/collapse behaviour on the NREIP sub-project
-   cards: collapsed shows a summary with a "Click to see more" pill, expanded
-   swaps in the scrollable write-up and a "See less" pill. */
+/* Expand/collapse behaviour on the NREIP sub-project cards: collapsed shows a
+   summary with a "Click to see more" pill, expanded swaps in the scrollable
+   write-up and a "See less" pill. */
 
 (function () {
   "use strict";
-
-  var year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
 
   function setOpen(sub, open) {
     var collapsed = sub.querySelector("[data-sub-collapsed]");
