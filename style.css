@@ -22,11 +22,6 @@
   --cream-faint: rgba(229, 231, 212, 0.52);
   --cream-line:  rgba(229, 231, 212, 0.16);
 
-  /* Scrollbars: always visible, one shade off the surface they sit on — darker
-     on the cream tiles, lighter on the dark sub-tiles, which override these. */
-  --scroll-thumb: #CED0BF;
-  --scroll-track: #DCDECC;
-
   --sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --display: "Playfair Display", Georgia, "Times New Roman", serif;
   --slab:    "Roboto Slab", Georgia, serif;
@@ -289,10 +284,10 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .sec { padding: clamp(44px, 6vw, 76px) 0; }
 
-/* Featured Work and About read as one thought, so halve the gap where they meet
+/* Featured Work and About read as one thought, so tighten the gap where they meet
    without touching the breathing room around the rest of the page. */
-#projects { padding-bottom: clamp(22px, 3vw, 38px); }
-#about    { padding-top:    clamp(22px, 3vw, 38px); }
+#projects { padding-bottom: clamp(11px, 1.5vw, 19px); }
+#about    { padding-top:    clamp(11px, 1.5vw, 19px); }
 
 .sec-head { margin-bottom: 32px; }
 
@@ -445,7 +440,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile-media-split .split-pane-app { object-fit: cover; object-position: top center; }
 .tile-media-split .split-pane-data { object-fit: cover; }
 
-/* ── Write-up blocks + scroll region ──────────────────────── */
+/* ── Write-up blocks ───────────────────────────────────────── */
 
 .block { margin-top: 20px; }
 .block:first-child { margin-top: 0; }
@@ -479,48 +474,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .tile .block p { color: var(--ink); }
 
-.scroller {
-  /* `scroll`, not `auto`, so the track is always laid out. */
-  overflow-y: scroll;
-  overscroll-behavior: contain;
-}
-
-/* Chrome and Safari: styling these pseudo-elements is what opts the element
-   out of the macOS overlay scrollbar that fades in only while scrolling.
-   Chrome ignores all of them the moment `scrollbar-width` or `scrollbar-color`
-   is set on the same element, so those two live in the @supports block below,
-   where only Firefox can see them. */
-.scroller::-webkit-scrollbar {
-  width: 10px;
-  background: var(--scroll-track);
-}
-.scroller::-webkit-scrollbar-track {
-  background: var(--scroll-track);
-  border-radius: 999px;
-}
-.scroller::-webkit-scrollbar-thumb {
-  background: var(--scroll-thumb);
-  border-radius: 999px;
-  min-height: 36px;
-}
-/* Keep the thumb visible when the pointer is elsewhere on the page. */
-.scroller::-webkit-scrollbar-thumb:window-inactive {
-  background: var(--scroll-thumb);
-}
-
-/* Firefox has no ::-webkit-scrollbar, so it uses the standard properties. */
-@supports not selector(::-webkit-scrollbar) {
-  .scroller {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
-  }
-}
-
-.tile-scroller {
-  max-height: 260px;
-  margin-top: 28px;
-  padding-right: 14px;
-}
+.tile-body { margin-top: 28px; }
 
 /* ── NREIP parent tile: sub-projects ──────────────────────── */
 
@@ -535,12 +489,13 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .sub {
   background: var(--ink);
   color: var(--cream);
-  --scroll-thumb: #314920;
-  --scroll-track: #243B13;
   border-radius: 16px;
   padding: 20px 26px 22px;
   transition: box-shadow .15s ease;
 }
+
+/* The video sub-card sits in the identity column, beside the tile photo. */
+.sub-inline { margin-top: 18px; }
 
 .sub:hover,
 .sub:focus-within {
@@ -564,6 +519,17 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   margin: 0;
 }
 
+/* Program and stack line above a sub-project summary, styled like .tile-org. */
+.sub-list { margin-top: 10px; }
+
+.sub-meta {
+  display: block;
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: -4px 0 8px;
+}
+
 .sub .block p { color: var(--cream); }
 .sub .block h5 { color: var(--cream); }
 .sub .block-list { color: var(--cream); }
@@ -571,13 +537,10 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 /* ── NREIP parent tile: light sub-tiles and write-up blocks ── */
 /* These sub-tiles sit on a light panel rather than the dark ink used
-   elsewhere, so their text runs ink-on-light and the scrollbar is shaded off
-   that panel the same way the cream tiles shade theirs. */
+   elsewhere, so their text runs ink-on-light. */
 .tile-parent .sub {
   background: #CED0BF;
   color: var(--ink);
-  --scroll-thumb: #B7B9AA;
-  --scroll-track: #C5C7B7;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -601,55 +564,6 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile-parent .sub .block h5,
 .tile-parent .sub .block-list { color: var(--ink); }
 .tile-parent .sub .todo { color: var(--ink-soft); }
-
-.sub-scroller,
-.sub-expanded .scroller {
-  max-height: 352px;
-  padding-right: 14px;
-}
-
-.sub-foot {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 16px;
-}
-
-/* ── See more / see less pill ─────────────────────────────── */
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  vertical-align: middle;
-  margin-left: 10px;
-  font-family: var(--sans);
-  font-size: 11.5px;
-  font-weight: 700;
-  line-height: 1.15;
-  white-space: nowrap;
-  color: var(--ink);
-  background: var(--gold);
-  border: 0;
-  border-radius: 999px;
-  padding: 8px 22px;
-  cursor: pointer;
-  transition: background .18s ease, transform .12s ease;
-}
-
-.pill:hover { background: var(--cream); transform: translateY(-1px); }
-
-.pill-less { margin-left: 0; }
-
-.pill-ico {
-  width: 14px;
-  height: 14px;
-  flex: none;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 
 .tile-note {
   text-align: center;
@@ -704,7 +618,6 @@ button:focus-visible {
   .tile-top-wide { grid-template-columns: 1fr; }
   .tile-media-split { max-width: 320px; }
   .sub { padding: 18px 20px 20px; }
-  .sub-expanded .scroller { max-height: 270px; }
 }
 
 @media (max-width: 520px) {

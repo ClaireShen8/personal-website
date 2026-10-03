@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claire Shen — AI/ML Engineering Student | Computer Vision &amp; Agentic AI</title>
-  <meta name="description" content="Claire Shen — AI major at UC San Diego with an active DoD Secret clearance, turning real pain points into AI solutions for military operators, doctors and patients." />
+  <meta name="description" content="Claire Shen — Artificial Intelligence undergraduate at UC San Diego developing computer vision systems, data pipelines, and software applications across defense and healthcare." />
   <meta name="theme-color" content="#C1D9D4" />
 
   <meta property="og:title" content="Claire Shen — AI major at UC San Diego" />
-  <meta property="og:description" content="AI solutions for Marines, Navy operators, doctors and patients, from air-gapped military systems to affordable healthcare." />
+  <meta property="og:description" content="Building AI for real-world constraints, across defense and healthcare." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,10 +39,10 @@
     <header class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <h1>Meet Your <span class="accent">AI Translator</span></h1>
+          <h1>Building AI for <span class="accent">real-world constraints.</span></h1>
           <p class="lede">
-            Connecting the world of AI to real-world operators, I’ve worked with Marines, fighter
-            pilots, patients and doctors to translate real pain points into delivered AI solutions.
+            Artificial Intelligence undergraduate at UC San Diego developing computer vision systems,
+            data pipelines, and software applications across defense and healthcare.
           </p>
 
           <ul class="facts">
@@ -52,11 +52,15 @@
             </li>
             <li class="fact">
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg>
-              B.S. Artificial Intelligence, 2028
+              B.S. Artificial Intelligence · Expected 2028
             </li>
             <li class="fact">
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
               UC San Diego
+            </li>
+            <li class="fact">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+              3 summers of Navy engineering experience
             </li>
           </ul>
 
@@ -106,170 +110,42 @@
                 <p class="tile-meta">Naval Surface Warfare Center Corona | 2026</p>
                 <h3 class="tile-title">NREIP Internship</h3>
                 <p class="tile-org">Naval Research Enterprise Internship Program</p>
-                <p class="tile-summary">
-                  This summer I had the opportunity to intern at both a software engineering lab
-                  (6 weeks) and a rapid prototyping lab (4 weeks). The below projects detail my
-                  primary work from the internship, on 2 separate project sprints.
-                </p>
+
+                <!-- Sub-project 1 -->
+                <section class="sub sub-inline">
+                  <h4 class="sub-title">Offline Video Annotation Platform</h4>
+                  <p class="sub-summary">
+                    <span class="sub-meta">NREIP 2026 | Python · Qt · OpenCV · Computer Vision</span>
+                    Built an air-gapped desktop application that converts raw video into organized,
+                    training-ready computer vision datasets.
+                  </p>
+                  <ul class="block-list sub-list">
+                    <li>Developed an end-to-end workflow for event extraction, AI-assisted
+                      annotation, dataset management, and YOLO-ready export.</li>
+                    <li>Implemented keypoint propagation, pose-estimation pre-labeling, and
+                      event-aware train/test splitting to prevent data leakage.</li>
+                    <li>Built a suite of 600 unit and integration tests; developed for a
+                      workflow involving approximately 100 GB of video data.</li>
+                  </ul>
+                  <p class="sub-summary">
+                    <strong>Estimated impact:</strong> Reduced an approximately 8-hour weekly
+                    labeling workflow to an estimated 2 hours.
+                  </p>
+                </section>
               </div>
             </div>
 
             <div class="subs">
 
-              <!-- Sub-project 1 -->
-              <section class="sub" data-sub>
-                <h4 class="sub-title">Air-Gapped Desktop Video Annotation Application</h4>
-
-                <div class="sub-collapsed" data-sub-collapsed>
-                  <p class="sub-summary">
-                    I built an offline desktop app that turns multi-hour video into a
-                    training-ready dataset. Model-assisted pre-labeling speeds up annotation.
-                    Every image and label traces back to its source video and frame. Labeling
-                    now runs about 3x faster.<button class="pill" type="button" data-sub-more aria-expanded="false">
-                      <span class="pill-text">Click to see more</span>
-                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                  </p>
-                </div>
-
-                <div class="sub-expanded" data-sub-expanded hidden>
-                  <div class="scroller">
-                    <section class="block">
-                      <h5>The Problem</h5>
-                      <p>
-                        A computer vision team was spending hours each week manually scrubbing
-                        long videos, isolating events, and labeling frames for model training.
-                        Because the data was sensitive, the entire workflow had to remain
-                        air-gapped, which made dataset organization and traceability
-                        especially difficult. Years of inconsistent folder structures and
-                        annotation formats had created a major bottleneck in producing
-                        reliable training datasets.
-                      </p>
-                      <p>
-                        With four weeks left in my internship, I turned a 4 hour per week
-                        labeling assignment into a project sprint to build an offline
-                        application that streamlined the full video-labeling lifecycle.
-                      </p>
-                    </section>
-
-                    <section class="block">
-                      <h5>What I Built</h5>
-                      <p>
-                        After interviewing the engineers who used the existing workflow, I
-                        built a Python desktop application with Qt and OpenCV for video
-                        review, event extraction, annotation, dataset management, and
-                        YOLO-ready export.
-                      </p>
-                      <p>
-                        The application includes high-speed video scrubbing, progressive frame
-                        sampling, bounding-box and keypoint annotation, keypoint propagation,
-                        and GPU/CPU-aware pose-estimation pre-labeling. It also generates
-                        event-aware train/validation/test splits to prevent related frames
-                        from leaking across datasets and enforces a standardized local folder
-                        structure with a reviewable file-repair workflow.
-                      </p>
-                      <p>
-                        I used agentic AI throughout development to implement detailed
-                        specifications and iterate rapidly, while manually designing the
-                        interface in Figma and validating the application with a suite of 600
-                        unit and integration tests.
-                      </p>
-                    </section>
-
-                    <section class="block">
-                      <h5>My Impact</h5>
-                      <p>
-                        Converted a tedious labeling task into a streamlined workflow, cutting
-                        a weekly 8 hour workflow to 2 across 100GB of video. Every image and
-                        label traces back to its source video and exact frame. I documented
-                        the tool's remaining limitations for whoever picks it up next. My
-                        recommendation for the next stage is a confidence-thresholded review
-                        loop, where the model annotates every frame and an analyst reviews
-                        only what it flags as uncertain.
-                      </p>
-                    </section>
-                  </div>
-
-                  <div class="sub-foot">
-                    <button class="pill pill-less" type="button" data-sub-less>
-                      <span class="pill-text">See less</span>
-                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
-                    </button>
-                  </div>
-                </div>
-              </section>
-
               <!-- Sub-project 2 -->
-              <section class="sub" data-sub>
-                <h4 class="sub-title">Ingestion Pipeline for Unstructured PDFs</h4>
-
-                <div class="sub-collapsed" data-sub-collapsed>
-                  <p class="sub-summary">
-                    I scoped a 3 stage plan (ingestion, extraction, prediction) to automate
-                    numerical estimates from several hundred inconsistently formatted failure
-                    reports. In a 3 week sprint, I built the ingestion stage with Docling,
-                    converting PDFs into structured Markdown with tables and layout intact.<button class="pill" type="button" data-sub-more aria-expanded="false">
-                      <span class="pill-text">Click to see more</span>
-                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-                    </button>
-                  </p>
-                </div>
-
-                <div class="sub-expanded" data-sub-expanded hidden>
-                  <div class="scroller">
-                    <section class="block">
-                      <h5>The Problem</h5>
-                      <p>
-                        A Navy rapid prototyping lab maintained hundreds of part malfunction
-                        reports. Their goal was to train a machine learning model to predict
-                        when a part will malfunction based on historical data. This would reduce
-                        the manual labor of analysts who read through these lengthy reports to
-                        produce estimates.
-                      </p>
-                      <p>
-                        The problem: the data was unstructured and unstandardized. Documents
-                        contained a mix of tables, structured sections, and narrative text. The
-                        available fields varied between reports, and the location of information
-                        on each page could not be predicted.
-                      </p>
-                      <p>
-                        Before automated extraction or prediction could be attempted, the
-                        documents needed to be converted into a consistent, machine-readable
-                        representation.
-                      </p>
-                    </section>
-
-                    <section class="block">
-                      <h5>What I Built</h5>
-                      <p>
-                        I scoped the larger problem into 3 stages: ingestion, extraction, and
-                        prediction, then defined a 3 week sprint around the ingestion stage. I
-                        implemented a layout-aware pipeline using Docling to analyze each page,
-                        identify headings, paragraphs, and tables, apply OCR when necessary, and
-                        convert the reports into structured Markdown while preserving document
-                        organization and table information. I also researched and documented an
-                        architecture for the remaining extraction and prediction stages.
-                      </p>
-                    </section>
-
-                    <section class="block">
-                      <h5>My Impact</h5>
-                      <p>
-                        Every report now reaches downstream stages in one consistent format. I
-                        handed off working ingestion software and a roadmap. Continuing the
-                        project requires validated extraction, historical outcome data, and
-                        analyst input on which variables drive their estimates.
-                      </p>
-                    </section>
-                  </div>
-
-                  <div class="sub-foot">
-                    <button class="pill pill-less" type="button" data-sub-less>
-                      <span class="pill-text">See less</span>
-                      <svg class="pill-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
-                    </button>
-                  </div>
-                </div>
+              <section class="sub">
+                <h4 class="sub-title">Unstructured PDF Ingestion Pipeline</h4>
+                <p class="sub-summary">
+                  <span class="sub-meta">NREIP 2026</span>
+                  Developed a layout-aware Docling pipeline to transform inconsistently formatted
+                  technical reports into standardized Markdown, preserving document hierarchy and
+                  tabular data for downstream analysis.
+                </p>
               </section>
 
             </div>
@@ -290,12 +166,11 @@
 
               <div class="tile-ident">
                 <p class="tile-meta">User research &amp; computer vision <span class="tile-state">In progress</span></p>
-                <h3 class="tile-title">DermLens</h3>
-                <p class="tile-org">Teledermatology · Computer vision</p>
+                <h3 class="tile-title">DermLens: Medical Image Preprocessing</h3>
+                <p class="tile-org">Computer Vision · Image Segmentation · Medical AI</p>
                 <p class="tile-summary">
-                  Helped develop a computer-vision-enabled teledermatology platform by conducting user
-                  research, building a longitudinal dataset of more than 5,000 clinical images, and
-                  fine-tuning CNNs to classify treatment-site erythema.
+                  Contributing to the development of a privacy-aware, standardized medical imaging
+                  dataset for longitudinal skin-treatment monitoring.
                 </p>
                 <div class="tile-links">
                   <a class="tile-link" href="https://dermlens.ai" target="_blank" rel="noreferrer">Website</a>
@@ -304,40 +179,50 @@
               </div>
             </div>
 
-            <div class="scroller tile-scroller">
+            <div class="tile-body">
               <section class="block">
-                <h5>The Problem</h5>
-                <p>DermLens is designed to make follow-up for non-surgical skin cancer treatment
-                  more accessible. Patients undergoing topical treatment need their treatment sites
-                  monitored over time, traditionally requiring repeated in-person visits. The
-                  challenge is determining how photos and patient-reported symptoms collected
-                  remotely could provide physicians with useful information about treatment
-                  progression without replacing physician oversight.</p>
-              </section>
-
-              <section class="block">
-                <h5>What I Built</h5>
-                <p>I have contributed across the project from its early user-research phase through
-                  computer vision development. I interviewed patients about their treatment
-                  experience and technology habits, helped translate the clinical workflow into
-                  application features and wireframes, and assisted dermatology clinic staff in
-                  assembling a custom longitudinal dataset of more than 5,000 treatment images. On
-                  the machine learning side, I fine-tuned and evaluated convolutional neural
-                  networks for classification of erythema, or treatment-site redness, as an initial
-                  step toward computer-assisted monitoring.</p>
-              </section>
-
-              <section class="block">
-                <h5>My Impact</h5>
-                <p>My work helped move DermLens from a clinical idea toward a data-driven system
-                  that can be evaluated technically. I have helped connect patient and physician
-                  needs to the application's design while building the dataset and baseline computer
-                  vision capabilities needed for future longitudinal monitoring. The project has also
-                  allowed me to apply computer vision to a problem where model performance must
-                  ultimately be evaluated in the context of real clinical decisions.</p>
+                <ul class="block-list">
+                  <li>Worked with an initial dataset of approximately 8,000 clinical images, selecting a
+                    representative sample of ~200 images to support segmentation-model development.</li>
+                  <li>Helped train a lesion-localization segmentation model to support automated cropping
+                    and reduce the exposure of potentially identifying image content.</li>
+                  <li>Supported image normalization (color, lighting, etc.) and managed image-by-image
+                    privacy and quality screening to prepare reliable ML training data.</li>
+                </ul>
               </section>
             </div>
-          </article>
+</article>
+
+          <!-- ── SEAP 2025 ──────────────────────────────────────── -->
+          <article class="tile">
+            <div class="tile-top">
+              <figure class="tile-media">
+                <img src="assets/tiles/seap-2025.jpeg" alt="Vehicle damage assessment device: a Raspberry Pi in a 3D-printed case with a camera on an adjustable arm" />
+              </figure>
+
+              <div class="tile-ident">
+                <p class="tile-meta">Naval Surface Warfare Center Corona - Fallbrook Detachment | 2025</p>
+                <h3 class="tile-title">Real-Time Vehicle Corrosion Detection</h3>
+                <p class="tile-org">SEAP 2025 | YOLOv8 · Raspberry Pi · Google Coral Edge TPU</p>
+                <p class="tile-summary">
+                  Helped develop an edge-deployed computer vision prototype for identifying vehicle
+                  corrosion in real time.
+                </p>
+              </div>
+            </div>
+
+            <div class="tile-body">
+              <section class="block">
+                <ul class="block-list">
+                  <li>Contributed to a custom dataset of 1,000+ field-collected and annotated corrosion
+                    images.</li>
+                  <li>Fine-tuned a YOLOv8 segmentation model for rust detection.</li>
+                  <li>Ran live inference on Raspberry Pi and Google Coral Edge TPU hardware, evaluating
+                    model performance under field-computing constraints.</li>
+                </ul>
+              </section>
+            </div>
+</article>
 
           <!-- ── HouseMeds ──────────────────────────────────────── -->
           <article class="tile">
@@ -349,11 +234,10 @@
               <div class="tile-ident">
                 <p class="tile-meta">User research &amp; backend development <span class="tile-state">In progress</span></p>
                 <h3 class="tile-title">HouseMeds</h3>
-                <p class="tile-org">Web tool · Prescription price search</p>
+                <p class="tile-org">Full-Stack Development | TypeScript · PostgreSQL · REST APIs</p>
                 <p class="tile-summary">
-                  Performing user research and backend development for a household prescription-cost
-                  optimization platform that compares medication prices across pharmacies to identify
-                  lower-cost purchasing strategies.
+                  Developing a household prescription-cost optimization platform with a five-person
+                  hackathon team.
                 </p>
                 <div class="tile-links">
                   <a class="tile-link" href="https://www.youtube.com/shorts/1xTVpXYJVDI" target="_blank" rel="noreferrer">Video Demo</a>
@@ -362,101 +246,19 @@
               </div>
             </div>
 
-            <div class="scroller tile-scroller">
+            <div class="tile-body">
               <section class="block">
-                <h5>The Problem</h5>
-                <p>Cash prices for the same prescription can vary substantially between pharmacies,
-                  and finding the lowest price becomes more complicated when optimizing medications
-                  for an entire household rather than for a single prescription. HouseMeds is
-                  designed to help families compare their medications together and determine a
-                  lower-cost purchasing strategy across pharmacies.</p>
-              </section>
-
-              <section class="block">
-                <h5>What I Built</h5>
-                <p>I began by interviewing patients and physicians to understand how people currently
-                  purchase prescriptions and where the process creates friction. I assembled a
-                  five-person team to translate those findings into a full-stack web application. I am
-                  developing the backend using TypeScript and PostgreSQL, integrating pharmacy pricing
-                  through REST APIs, and working on the optimization logic that compares medication
-                  prices at the household level rather than treating every prescription
-                  independently.</p>
-              </section>
-
-              <section class="block">
-                <h5>My Impact</h5>
-                <p>I have taken the project from an initial healthcare problem through user
-                  research, workflow definition, team formation, and early implementation. My role
-                  has focused on making sure the technical design reflects how patients actually
-                  manage medications while coordinating the work needed to turn those requirements
-                  into a functioning product. Because HouseMeds is still under active development,
-                  its impact so far is the creation of a user-informed architecture and development
-                  team rather than measured patient savings.</p>
-              </section>
-            </div>
-          </article>
-
-          <!-- ── SEAP 2025 ──────────────────────────────────────── -->
-          <article class="tile">
-            <div class="tile-top">
-              <figure class="tile-media">
-                <img src="assets/tiles/seap-2025.jpeg" alt="Vehicle damage assessment device: a Raspberry Pi in a 3D-printed case with a camera on an adjustable arm" />
-              </figure>
-
-              <div class="tile-ident">
-                <p class="tile-meta">Naval Surface Warfare Center Corona - Fallbrook Detachment | 2025</p>
-                <h3 class="tile-title">Computer Vision Vehicle Damage Assessment Device</h3>
-                <p class="tile-org">SEAP · Science &amp; Engineering Apprenticeship Program</p>
-                <p class="tile-summary">
-                  Helped transform an open-ended AI concept into a real-time corrosion-detection
-                  system by building a custom dataset, fine-tuning a YOLO segmentation model, and
-                  deploying it on Raspberry Pi/Google Coral Edge TPU.
-                </p>
-              </div>
-            </div>
-
-            <div class="scroller tile-scroller">
-              <section class="block">
-                <h5>The Problem</h5>
-                <p>Our intern team received an open-ended challenge: explore how AI could
-                  help Marines assess vehicle damage. There was no predefined user workflow, dataset,
-                  or technical approach. Any useful solution also needed to account for field
-                  constraints such as mobility, cost, durability, and limited computing resources.</p>
-              </section>
-
-              <section class="block">
-                <h5>What I Built</h5>
-                <p>We first narrowed the problem, by focusing on vehicle corrosion detection. Then,
-                  our team collected over 1,000 images of corrosion from out in the field, which we
-                  cleaned and labeled to create a custom dataset. We fine-tuned a YOLOv8
-                  image-segmentation model to identify rust and tested the model using live camera
-                  input before adapting it for edge hardware including Raspberry Pi and Google
-                  Coral.</p>
-                <p>The biggest initial challenge was communication. The 4 person intern team was
-                  initially researching many of the same problems independently. So, I introduced
-                  regular standup meetings, encouraged shared workspaces, and established regular
-                  communication with our supervising engineer. This greatly accelerated the team&rsquo;s
-                  progress, allowing us to plan our sprint more strategically and collectively focus
-                  on developing a usable prototype.</p>
-              </section>
-
-              <section class="block">
-                <h5>My Impact</h5>
-                <p>Our team turned a broad directive to &ldquo;build an AI-enabled vehicle damage
-                  tool&rdquo; into a working computer vision system capable of identifying corrosion
-                  in real time. I helped take the project through the complete applied machine
-                  learning workflow:</p>
                 <ul class="block-list">
-                  <li>Define and scope a practical problem</li>
-                  <li>Build our own dataset</li>
-                  <li>Model fine-tuning</li>
-                  <li>Deployment and testing on edge hardware</li>
+                  <li>Conducted patient and physician interviews to translate medication-pricing challenges
+                    into product requirements.</li>
+                  <li>Assembled the development team and contributed to implementation of the SQL-backed
+                    application.</li>
+                  <li>Working toward pharmacy-pricing integration and household-level cost optimization.</li>
                 </ul>
-                <p>All while improving collaboration between team members working in an unfamiliar
-                  technical domain.</p>
+                <p><strong>Status:</strong> Active developing automated live pricing updates.</p>
               </section>
             </div>
-          </article>
+</article>
 
           <!-- ── SEAP 2024 ──────────────────────────────────────── -->
           <article class="tile">
@@ -467,45 +269,13 @@
 
               <div class="tile-ident">
                 <p class="tile-meta">Naval Surface Warfare Center Corona - Fallbrook Detachment | 2024</p>
-                <h3 class="tile-title">Custom and Reverse-Engineered Parts for Marines</h3>
-                <p class="tile-org">SEAP · Science &amp; Engineering Apprenticeship Program</p>
+                <h3 class="tile-title">Reverse Engineering &amp; Additive Manufacturing</h3>
+                <p class="tile-org">SEAP 2024</p>
                 <p class="tile-summary">
                   Designed, reverse-engineered, manufactured, and tested physical components for
-                  Marine end users using CAD and additive manufacturing, turning loosely defined
-                  requirements into deployable solutions.
+                  Marine end users using Fusion 360, SOLIDWORKS, and additive manufacturing.
                 </p>
               </div>
-            </div>
-
-            <div class="scroller tile-scroller">
-              <section class="block">
-                <h5>The Problem</h5>
-                <p>My first summer at the Navy's Rapid Prototyping Lab centered on practical
-                  engineering problems brought in by Marines and machinists. Some requirements were
-                  loosely defined, while other projects involved military vehicle components that
-                  were difficult to source through conventional replacement channels. The challenge
-                  was to understand what the end user actually needed and quickly turn that need into
-                  a manufacturable physical solution.</p>
-              </section>
-
-              <section class="block">
-                <h5>What I Built</h5>
-                <p>I designed, manufactured, and tested a physical component from a machinist's
-                  high-level requirements, communicating directly with Marine end users as the design
-                  progressed and ultimately supporting its deployment on base. I also used Fusion 360
-                  and SOLIDWORKS to reverse-engineer hard-to-source vehicle components and reproduce
-                  them using additive manufacturing.</p>
-              </section>
-
-              <section class="block">
-                <h5>My Impact</h5>
-                <p>These projects gave Marine users practical physical solutions rather than designs
-                  that stopped at the prototype stage. By combining direct conversations with end
-                  users, CAD modeling, reverse engineering, fabrication, and iterative testing, I
-                  learned how to take an incomplete real-world requirement and carry it through to a
-                  part that could actually be used. That experience became the foundation for the
-                  user-centered engineering approach I carried into my later Navy and AI projects.</p>
-              </section>
             </div>
           </article>
 
@@ -517,21 +287,17 @@
     <section class="sec" id="about">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-row"><h2>About me</h2></div>
+          <div class="sec-row"><h2>About Me</h2></div>
         </div>
         <div class="prose">
           <p>
-            Hi, I'm Claire! I'm in the first cohort of undergrads in AI at UC San Diego. One
-            theme carries across all my work: I care deeply about the end user. I listen
-            carefully and learn the operator's issues before designing a solution. Input from
-            my supervisor and team is essential in analyzing successes and failures in design
-            and implementation.
+            I'm an Artificial Intelligence undergraduate at UC San Diego with three summers of
+            engineering experience in Department of the Navy labs.
           </p>
           <p>
-            My work spans computer vision, ML models, and building agentic workflows. I have
-            faced challenges building in resource-constrained environments within air-gapped
-            (completely offline) military systems. I am also passionate about building medical
-            solutions that help provide accessible, affordable healthcare to patients.
+            I enjoy working directly with end users to identify practical problems, translate
+            their requirements into technical solutions, and build software that performs under
+            real-world constraints.
           </p>
         </div>
       </div>
@@ -558,7 +324,5 @@
 
   </main>
 
-
-  <script src="app.js"></script>
 </body>
 </html>
