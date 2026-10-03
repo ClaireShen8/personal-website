@@ -474,14 +474,14 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .tile .block p { color: var(--ink); }
 
-.tile-body { margin-top: 28px; }
+.tile-body { margin-top: 44px; }
 
 /* ── NREIP parent tile: sub-projects ──────────────────────── */
 
 .subs {
   display: grid;
   gap: 26px;
-  margin-top: 30px;
+  margin-top: 44px;
   /* room for the 5px hover offset so it never clips against the tile edge */
   padding: 0 6px 6px 0;
 }
