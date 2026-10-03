@@ -437,17 +437,6 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   box-shadow: none;
 }
 
-/* NREIP stacks two images: the wireframe shown whole on top, the photo below
-   cropped to a fixed shape. Each keeps the usual cream border and bronze offset. */
-.tile-media-stack {
-  display: grid;
-  gap: 22px;
-  max-width: 340px;
-}
-
-.tile-media-stack .stack-full { aspect-ratio: auto; height: auto; }
-.tile-media-stack .stack-crop { aspect-ratio: 4 / 3; }
-
 .tile-media-split .split-pane-app { object-fit: cover; object-position: top center; }
 .tile-media-split .split-pane-data { object-fit: cover; }
 
@@ -505,8 +494,15 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   transition: box-shadow .15s ease;
 }
 
-/* On the NREIP tile both sub-cards sit in the identity column, beside the photos. */
-.subs-inline { margin-top: 18px; }
+/* App wireframe at the foot of the video sub-card, shown whole at card width. */
+.sub-media { margin: 20px 10px 10px 0; }
+.sub-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 3px solid var(--cream);
+  box-shadow: 10px 10px 0 var(--bronze);
+}
 
 .sub:hover,
 .sub:focus-within {
@@ -627,8 +623,7 @@ button:focus-visible {
   .tile-top { grid-template-columns: 1fr; row-gap: 24px; }
   .tile-media { max-width: 220px; margin: 0 10px 10px 0; }
   .tile-top-wide { grid-template-columns: 1fr; }
-  .tile-media-split,
-  .tile-media-stack { max-width: 320px; }
+  .tile-media-split { max-width: 320px; }
   .sub { padding: 18px 20px 20px; }
 }
 
