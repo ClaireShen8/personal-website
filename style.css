@@ -218,7 +218,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   color: var(--ink);
   /* flat highlighter band like the tagline's .accent: no border or rounding */
   background: var(--gold);
-  padding: 8px 10px;
+  padding: 4px 10px;
 }
 
 .fact .ico {
