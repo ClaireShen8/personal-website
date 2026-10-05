@@ -437,6 +437,19 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   box-shadow: none;
 }
 
+/* HouseMeds embeds a vertical YouTube Short in place of a photo, framed like
+   the other tile media. app.js plays it while the tile is hovered. */
+.tile-media-video { max-width: 240px; }
+.tile-media-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 6px;
+  border: 3px solid var(--cream);
+  box-shadow: 10px 10px 0 var(--bronze);
+  background: var(--ink);
+}
+
 .tile-media-split .split-pane-app { object-fit: cover; object-position: top center; }
 .tile-media-split .split-pane-data { object-fit: cover; }
 
@@ -475,6 +488,9 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .tile .block p { color: var(--ink); }
 
 .tile-body { margin-top: 44px; }
+
+/* HouseMeds keeps its bullets in the text column, beside the tall video. */
+.tile-body-inline { margin-top: 24px; }
 
 /* ── NREIP parent tile: sub-projects ──────────────────────── */
 

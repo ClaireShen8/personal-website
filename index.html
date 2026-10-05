@@ -197,10 +197,14 @@
 </article>
 
           <!-- ── HouseMeds ──────────────────────────────────────── -->
-          <article class="tile">
+          <article class="tile" data-hover-video>
             <div class="tile-top">
-              <figure class="tile-media">
-                <img src="assets/tiles/housemeds.jpg" alt="HouseMeds team presenting a live demo of the app to an audience" />
+              <figure class="tile-media tile-media-video">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/1xTVpXYJVDI?enablejsapi=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=1xTVpXYJVDI&amp;playsinline=1&amp;rel=0"
+                  title="HouseMeds demo video"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  loading="lazy"></iframe>
               </figure>
 
               <div class="tile-ident">
@@ -212,25 +216,25 @@
                   hackathon team.
                 </p>
                 <div class="tile-links">
-                  <a class="tile-link" href="https://youtu.be/M_1-rLBGFd8?si=jI9S9LuACL_q8CEn" target="_blank" rel="noreferrer">Video Demo</a>
+                  <a class="tile-link" href="https://youtu.be/M_1-rLBGFd8?si=jI9S9LuACL_q8CEn" target="_blank" rel="noreferrer">Live Demo</a>
                   <a class="tile-link" href="https://github.com/perixtar/HouseMeds" target="_blank" rel="noreferrer">GitHub Repo</a>
+                </div>
+
+                <div class="tile-body tile-body-inline">
+                  <section class="block">
+                    <ul class="block-list">
+                      <li>Conducted patient and physician interviews to translate medication-pricing challenges
+                        into product requirements.</li>
+                      <li>Assembled the development team and contributed to implementation of the SQL-backed
+                        application.</li>
+                      <li>Working toward pharmacy-pricing integration and household-level cost optimization.</li>
+                    </ul>
+                    <p><strong>Status:</strong> Active developing automated live pricing updates.</p>
+                  </section>
                 </div>
               </div>
             </div>
-
-            <div class="tile-body">
-              <section class="block">
-                <ul class="block-list">
-                  <li>Conducted patient and physician interviews to translate medication-pricing challenges
-                    into product requirements.</li>
-                  <li>Assembled the development team and contributed to implementation of the SQL-backed
-                    application.</li>
-                  <li>Working toward pharmacy-pricing integration and household-level cost optimization.</li>
-                </ul>
-                <p><strong>Status:</strong> Active developing automated live pricing updates.</p>
-              </section>
-            </div>
-</article>
+          </article>
 
           <!-- ── SEAP 2025 ──────────────────────────────────────── -->
           <article class="tile">
@@ -331,5 +335,6 @@
 
   </main>
 
+  <script src="app.js"></script>
 </body>
 </html>
