@@ -201,7 +201,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 .facts {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px 14px;
   list-style: none;
   margin: 26px 0 0;
   padding: 0;
@@ -216,10 +216,9 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--ink);
+  /* flat highlighter band like the tagline's .accent: no border or rounding */
   background: var(--gold);
-  border: 1.5px solid var(--ink);
-  border-radius: 8px;
-  padding: 8px 14px;
+  padding: 8px 10px;
 }
 
 .fact .ico {
