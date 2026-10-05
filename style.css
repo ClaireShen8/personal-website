@@ -488,6 +488,9 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 .tile-body { margin-top: 44px; }
 
+/* Bullets that follow a tile summary directly, in the text column. */
+.tile-summary + .block-list { margin-top: 8px; }
+
 /* HouseMeds keeps its bullets in the text column, beside the tall video. */
 .tile-body-inline { margin-top: 24px; }
 
