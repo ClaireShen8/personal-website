@@ -544,6 +544,10 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 /* Program and stack line above a sub-project summary, styled like .tile-org. */
 .sub-list { margin-top: 10px; }
 
+/* Lead-in line that introduces a sub-card's bullet list. */
+.sub-lead { margin-top: 12px; }
+.sub-lead + .sub-list { margin-top: 2px; }
+
 .sub-meta {
   display: block;
   font-size: 13.5px;
