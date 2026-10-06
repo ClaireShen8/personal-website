@@ -438,7 +438,7 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
 
 /* HouseMeds embeds a vertical YouTube Short in place of a photo, framed like
    the other tile media. app.js plays it while the tile is hovered. */
-.tile-media-video { max-width: 240px; }
+.tile-media-video { max-width: 240px; position: relative; }
 .tile-media-video iframe {
   display: block;
   width: 100%;
@@ -447,6 +447,80 @@ h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
   border: 3px solid var(--cream);
   box-shadow: 10px 10px 0 var(--bronze);
   background: var(--ink);
+}
+
+/* A still frame covers the player until the tile is hovered, so YouTube's
+   paused-state controls and title never show; while playing, YouTube shows
+   its control bar only when the pointer is over the video itself. */
+.tile-media-video .video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  border: 3px solid var(--cream);
+  border-radius: 6px;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+[data-hover-video]:hover .video-poster { opacity: 0; }
+
+/* Page-drawn scrub bar, modelled on YouTube's: a thin strip along the very
+   bottom of the video, below YouTube's logo so the logo stays clickable.
+   YouTube's own controls are off; this shows only while the pointer is over
+   the video itself (CSS :hover, plus .is-hover from app.js as a fallback). */
+.video-controls {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  padding: 0 8px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.tile-media-video:hover .video-controls,
+.tile-media-video.is-hover .video-controls,
+.video-controls:focus-within { opacity: 1; }
+
+/* tall hit area around a thin rail, which thickens on hover like YouTube's */
+.vc-seek { padding: 6px 0; cursor: pointer; touch-action: none; }
+.vc-seek:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.vc-rail {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  transition: height .12s ease;
+}
+.vc-seek:hover .vc-rail,
+.vc-seek.is-dragging .vc-rail { height: 5px; }
+.vc-fill {
+  position: relative;
+  width: 0;
+  height: 100%;
+  background: #f00;
+}
+.vc-fill::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f00;
+  transform: translateY(-50%) scale(0);
+  transition: transform .12s ease;
+}
+.vc-seek:hover .vc-fill::after,
+.vc-seek.is-dragging .vc-fill::after { transform: translateY(-50%) scale(1); }
+
+/* Touch screens have no hover: leave the player uncovered and the scrub bar
+   showing so a tap plays it. */
+@media (hover: none) {
+  .tile-media-video .video-poster { display: none; }
+  .video-controls { opacity: 1; }
 }
 
 .tile-media-split .split-pane-app { object-fit: cover; object-position: top center; }
